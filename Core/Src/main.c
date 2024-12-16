@@ -33,9 +33,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define MAX_POMIARY 500
+#define MAX_POMIARY 5000
 #define FRAME_END "\r\n"  // Zakończenie ramki
 #define MAX_FRAME_SIZE 50  // Maksymalny rozmiar ramki danych
+#define ROZM_HISTORIA 100
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -45,7 +46,9 @@
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
+DMA_HandleTypeDef hdma_adc1;
 
+TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
@@ -72,11 +75,20 @@ volatile int czyZadzialalo = 0;
 
 char idCzujnika[3];
 char idPomiaruDynam[2];
+char idPomiaru;
 uint16_t czasPomiaruDynam = 0;
 uint16_t progPomiaruDynam = 0;
 
+int tmpVal = 0;
 
-int tablicaPomiarowDynamicznych[MAX_POMIARY] = {0};  // Bufor
+
+uint8_t licznikDoPomiaruMatrycy = 0;
+
+
+uint32_t tablicaPomiarowDynamicznych[MAX_POMIARY];  // Bufor
+uint32_t tablicaHistoriiPrzedPomiarem[ROZM_HISTORIA] = {0};
+uint16_t indeksHistorii = 0;
+
 int licznikPoczatku = 0;  // Wskaźnik na najstarszy pomiar
 int liczbaPomiarow = 0;   // Licznik faktycznej liczby pomiarów w buforze
 int licznikDanychPowyzej30 = 0;  // Licznik pomiarów powyżej 30
@@ -86,12 +98,13 @@ int flagaZmiany = 0;  // Flaga wykrywająca zmianę z <30 na >30
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
-
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -117,6 +130,7 @@ uint16_t crc16_ccitt_false(const char* pData, int length)
     }
     return wCrc;
 }
+
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     if (huart->Instance == USART2) {
@@ -148,18 +162,82 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 	if(htim == &htim2)
 	{
-		if(strcmp(idCzujnika, "C5") == 0)
+		if( idPomiaru == 'S' )
 		{
-			sprintf(dane, "P S C5 %d", adc_value5);
-			int crc16=crc16_ccitt_false(dane, strlen(dane));
-			printf( "%s %0*d\r\n", dane, 5, crc16);
+			if(strcmp(idCzujnika, "C5") == 0)
+			{
+				  HAL_ADC_Stop(&hadc1);
+				  ADC_Select_CH11();
+				  HAL_ADC_Start(&hadc1);
+				  HAL_ADC_PollForConversion(&hadc1, 1000);
+				  adc_value5=HAL_ADC_GetValue(&hadc1);
+
+				sprintf(dane, "P S C5 %d", adc_value5);
+				int crc16=crc16_ccitt_false(dane, strlen(dane));
+				printf( "%s %0*d\r\n", dane, 5, crc16);
+			}
+
+			if(strcmp(idCzujnika, "C6") == 0)
+			{
+				  HAL_ADC_Stop(&hadc1);
+				  ADC_Select_CH10();
+				  HAL_ADC_Start(&hadc1);
+				  HAL_ADC_PollForConversion(&hadc1, 1000);
+				  adc_value6=HAL_ADC_GetValue(&hadc1);
+
+
+				sprintf(dane, "P S C6 %d", adc_value6);
+				int crc16=crc16_ccitt_false(dane, strlen(dane));
+				printf( "%s %0*d\r\n", dane, 5, crc16);
+			}
 		}
 
-		if(strcmp(idCzujnika, "C6") == 0)
+		if( idPomiaru == 'M')
 		{
-			sprintf(dane, "P S C6 %d", adc_value6);
+			switch(licznikDoPomiaruMatrycy)
+			{
+			case 0:
+			  HAL_ADC_Stop(&hadc1);
+			  ADC_Select_CH0();
+			  HAL_ADC_Start(&hadc1);
+			  HAL_ADC_PollForConversion(&hadc1, 1000);
+			  adc_value1=HAL_ADC_GetValue(&hadc1);
+			  break;
+
+			case 1:
+			  HAL_ADC_Stop(&hadc1);
+			  ADC_Select_CH1();
+			  HAL_ADC_Start(&hadc1);
+			  HAL_ADC_PollForConversion(&hadc1, 1000);
+			  adc_value2=HAL_ADC_GetValue(&hadc1);
+			  break;
+
+			case 2:
+			  HAL_ADC_Stop(&hadc1);
+			  ADC_Select_CH4();
+			  HAL_ADC_Start(&hadc1);
+			  HAL_ADC_PollForConversion(&hadc1, 1000);
+			  adc_value3=HAL_ADC_GetValue(&hadc1);
+			  break;
+
+			case 3:
+			  HAL_ADC_Stop(&hadc1);
+			  ADC_Select_CH8();
+			  HAL_ADC_Start(&hadc1);
+			  HAL_ADC_PollForConversion(&hadc1, 1000);
+			  adc_value4=HAL_ADC_GetValue(&hadc1);
+
+			// Wyslij raz na 4 przerwania zegara
+			sprintf(dane, "P M C1 %d C2 %d C3 %d C4 %d", adc_value1, adc_value2, adc_value3, adc_value4 );
 			int crc16=crc16_ccitt_false(dane, strlen(dane));
 			printf( "%s %0*d\r\n", dane, 5, crc16);
+			  break;
+
+			default:
+			  break;
+			}
+
+			licznikDoPomiaruMatrycy = (licznikDoPomiaruMatrycy + 1) %4;
 		}
 		/*
 		  sprintf(dane, "S1 %d S2 %d S3 %d S4 %d S5 %d S6 %d", adc_value1, adc_value2, adc_value3, adc_value4, adc_value5, adc_value6);
@@ -170,54 +248,91 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 	if (htim == &htim3)
 	    {
+		//printf( "htim3\r\n" );
 
-			if(strcmp(idPomiaruDynam, "T") == 0)
+		int tempValPom = 0;
+			if( idPomiaruDynam[0] == 'T' )
 			{
-				//printf("D C5 oraz T czas: %f\r\n", czasPomiaruDynam);
-				//printf("P D C5 T %f\r\n", czasPomiaruDynam);
+				if ( idCzujnika[1] == '5' )
+				{
 
-				uint16_t maxPomiarow = czasPomiaruDynam / 4;
-				//printf("Prog pomiarow: %d\r\n", progPomiaruDynam);
-		        if (((adc_value6 > progPomiaruDynam) && strcmp(idCzujnika, "C6") == 0)||
-		        	((adc_value5 > progPomiaruDynam) && strcmp(idCzujnika, "C5") == 0))
+					tmpVal = (++tmpVal)%10000;
+					  HAL_ADC_Stop(&hadc1);
+					  ADC_Select_CH11();
+					  HAL_ADC_Start(&hadc1);
+					  HAL_ADC_PollForConversion(&hadc1, 1000);
+					  adc_value5=HAL_ADC_GetValue(&hadc1);
+					  HAL_ADC_Stop(&hadc1);
+					  if ( !tmpVal )
+					  {
+						  printf("htim3 cz5: %d\r\n", adc_value5);
+						  //printf("Prog pomiarow: %d\r\n", progPomiaruDynam);
+					  }
+					  tempValPom = adc_value5;
+
+				} else if( idCzujnika[1] == '6' ) {
+
+					  HAL_ADC_Stop(&hadc1);
+					  ADC_Select_CH10();
+					  HAL_ADC_Start(&hadc1);
+					  HAL_ADC_PollForConversion(&hadc1, 1000);
+					  adc_value6=HAL_ADC_GetValue(&hadc1);
+					  HAL_ADC_Stop(&hadc1);
+
+					  tempValPom = adc_value6;
+				}
+
+				if ( !flagaZmiany)
+				{
+			    tablicaHistoriiPrzedPomiarem[indeksHistorii] = tempValPom;
+			    indeksHistorii = (indeksHistorii + 1) % ROZM_HISTORIA;  // Przejście na kolejny indeks cyklicznie
+				}
+//				if ( (adc_value5 <= progPomiaruDynam) && flagaZmiany ) flagaZmiany = 0;
+
+		        if (( (adc_value6 > progPomiaruDynam) && idCzujnika[1] == '6') ||
+		        	( (adc_value5 > progPomiaruDynam) && idCzujnika[1] == '5'))
 		        {
-
+		        	//printf("aasddasdasd");
 		            // Sprawdzenie, czy zmieniło się z <30 na >30
 		            if (!flagaZmiany)
 		            {
+		            	//printf("ZaczynamDynamT!!!\r\n");
+		            	HAL_ADC_Stop(&hadc1);
+		            	ADC_Select_CH11();
+		            	HAL_ADC_Start_DMA(&hadc1, (uint32_t*)tablicaPomiarowDynamicznych, MAX_POMIARY);
 		                flagaZmiany = 1;  // Ustawienie flagi zmiany
 		            }
 
-		            // Dodajemy nowy pomiar do bufora w zaleznosci czy C5 czy C6
-		            if(strcmp(idCzujnika, "C5") == 0)
-		            {
-		            	tablicaPomiarowDynamicznych[licznikPoczatku] = adc_value5;
-
-		            } else if (strcmp(idCzujnika, "C6") == 0) {
-
-		            	tablicaPomiarowDynamicznych[licznikPoczatku] = adc_value6;
-		            }
-
-		            // Przesuwamy wskaźnik na następną pozycję, z uwzględnieniem cykliczności
-		            licznikPoczatku = (licznikPoczatku + 1) % maxPomiarow;
-
-		            // Aktualizujemy licznik liczby pomiarów, ale nie przekraczamy limitu
-		            if (liczbaPomiarow < maxPomiarow)
-		            {
-		                liczbaPomiarow++;
-		            }
-
-		            // Zwiększamy licznik danych powyżej 30
-		            licznikDanychPowyzej30++;
-
-		            // Jeśli osiągnęliśmy 90 pomiarów powyżej 30, wyświetlamy zawartość bufora
-		            if (licznikDanychPowyzej30 >= maxPomiarow-10 && flagaZmiany == 1)
-		            {
-		                // Zmieniamy flagę na 2, aby zapobiec ponownemu wyświetlaniu
-		                flagaZmiany = 2;
-
-		                // Wyświetlanie wszystkich danych z bufora
-		                sendDataRamkaDynamT(tablicaPomiarowDynamicznych, czasPomiaruDynam);
+//		            // Dodajemy nowy pomiar do bufora w zaleznosci czy C5 czy C6
+//		            if(strcmp(idCzujnika, "C5") == 0)
+//		            {
+//		            	tablicaPomiarowDynamicznych[licznikPoczatku] = adc_value5;
+//
+//		            } else if (strcmp(idCzujnika, "C6") == 0) {
+//
+//		            	tablicaPomiarowDynamicznych[licznikPoczatku] = adc_value6;
+//		            }
+//
+//		            // Przesuwamy wskaźnik na następną pozycję, z uwzględnieniem cykliczności
+//		            licznikPoczatku = (licznikPoczatku + 1) % maxPomiarow;
+//
+//		            // Aktualizujemy licznik liczby pomiarów, ale nie przekraczamy limitu
+//		            if (liczbaPomiarow < maxPomiarow)
+//		            {
+//		                liczbaPomiarow++;
+//		            }
+//
+//		            // Zwiększamy licznik danych powyżej 30
+//		            licznikDanychPowyzej30++;
+//
+//		            // Jeśli osiągnęliśmy 90 pomiarów powyżej 30, wyświetlamy zawartość bufora
+//		            if (licznikDanychPowyzej30 >= maxPomiarow-10 && flagaZmiany == 1)
+//		            {
+//		                // Zmieniamy flagę na 2, aby zapobiec ponownemu wyświetlaniu
+//		                flagaZmiany = 2;
+//
+//		                // Wyświetlanie wszystkich danych z bufora
+//		                sendDataRamkaDynamT(tablicaPomiarowDynamicznych, czasPomiaruDynam);
 
 		            }
 		        }
@@ -244,7 +359,23 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	        {
 	            // Sprawdzenie, czy zmieniło się z <30 na >30
 	            if (!flagaZmiany)
-	            {
+	            {			if(strcmp(idCzujnika, "C5") == 0)
+			{
+
+				  HAL_ADC_PollForConversion(&hadc1, 1000);
+				  adc_value5=HAL_ADC_GetValue(&hadc1);
+
+				sprintf(dane, "P S C5 %d", adc_value5);
+				int crc16=crc16_ccitt_false(dane, strlen(dane));
+				printf( "%s %0*d\r\n", dane, 5, crc16);
+			}
+
+			if(strcmp(idCzujnika, "C6") == 0)
+			{
+				sprintf(dane, "P S C6 %d", adc_value6);
+				int crc16=crc16_ccitt_false(dane, strlen(dane));
+				printf( "%s %0*d\r\n", dane, 5, crc16);
+			}
 	                flagaZmiany = 1;  // Ustawienie flagi zmiany
 	            }
 
@@ -281,7 +412,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	            licznikDanychPowyzej30 = 0;  // Reset licznika tylko po spadku wartości poniżej 30
 	        }
 	        	    */
-	    }
+//	    }
 
 void ADC_Select_CH0 (void)
 {
@@ -289,11 +420,12 @@ void ADC_Select_CH0 (void)
 
 	  sConfig.Channel = ADC_CHANNEL_0;
 	  sConfig.Rank = 1;
-	  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+	  sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;
 	  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
 	  {
 	    Error_Handler();
 	  }
+	  //HAL_Delay_us(1);
 }
 
 void ADC_Select_CH1 (void)
@@ -306,6 +438,7 @@ void ADC_Select_CH1 (void)
 	  {
 	    Error_Handler();
 	  }
+	  //HAL_Delay_us(1);
 }
 
 void ADC_Select_CH4 (void)
@@ -318,6 +451,7 @@ void ADC_Select_CH4 (void)
 	  {
 	    Error_Handler();
 	  }
+	  //HAL_Delay_us(1);
 }
 
 void ADC_Select_CH8 (void)
@@ -330,6 +464,7 @@ void ADC_Select_CH8 (void)
 	  {
 	    Error_Handler();
 	  }
+	  //HAL_Delay_us(1);
 }
 
 void ADC_Select_CH10 (void)
@@ -337,11 +472,12 @@ void ADC_Select_CH10 (void)
 	ADC_ChannelConfTypeDef sConfig ={0};
 	  sConfig.Channel = ADC_CHANNEL_10;
 	  sConfig.Rank = 1;
-	  sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;
+	  sConfig.SamplingTime = ADC_SAMPLETIME_56CYCLES;
 	  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
 	  {
 	    Error_Handler();
 	  }
+	  //HAL_Delay_us(1);
 }
 
 void ADC_Select_CH11 (void)
@@ -349,62 +485,76 @@ void ADC_Select_CH11 (void)
 	ADC_ChannelConfTypeDef sConfig ={0};
 	  sConfig.Channel = ADC_CHANNEL_11;
 	  sConfig.Rank = 1;
-	  sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;
+	  sConfig.SamplingTime = ADC_SAMPLETIME_56CYCLES;
 	  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
 	  {
 	    Error_Handler();
 	  }
+	  //HAL_Delay_us(1);
 }
 
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
-	static uint8_t counter = 0;
+//    if (hadc->Instance == ADC1) {
+//        printf("DMA Transfer Complete\r\n");
+//        for (int i = 0; i < 10; i++) { // Wyświetl kilka pierwszych wartości
+//            printf("tablica[%d] = %lu\r\n", i, tablicaPomiarowDynamicznych[i]);
+//        }
+//    }
 
-	switch (counter)
+	if( (hadc->Instance == ADC1) && (flagaZmiany == 1) && (idPomiaruDynam[0] == 'T') )
 	{
-	case 0:
-		//ADC_Select_CH0();
-		adc_value1 = HAL_ADC_GetValue(&hadc1);
-		counter = 1;
-		break;
-
-	case 1:
-		ADC_Select_CH1();
-		adc_value2 = HAL_ADC_GetValue(&hadc1);
-		counter = 2;
-		break;
-
-	case 2:
-		ADC_Select_CH4();
-		adc_value3 = HAL_ADC_GetValue(&hadc1);
-		counter = 3;
-		break;
-
-	case 3:
-		ADC_Select_CH8();
-		adc_value4 = HAL_ADC_GetValue(&hadc1);
-		counter = 4;
-		break;
-
-	case 4:
-		ADC_Select_CH10();
-		adc_value6 = HAL_ADC_GetValue(&hadc1);
-		counter = 5;
-		break;
-
-	case 5:
-		ADC_Select_CH11();
-		adc_value5 = HAL_ADC_GetValue(&hadc1);
-		counter = 0;
-		break;
-
-	default:
-		counter = 0;
-		break;
+		sendDataRamkaDynamT(tablicaPomiarowDynamicznych, czasPomiaruDynam);
+		HAL_ADC_Stop_DMA(&hadc1);
 	}
 
-	HAL_ADC_Start_IT(&hadc1);
+//	static uint8_t counter = 0;
+//
+//	switch (counter)
+//	{
+//	case 0:
+//		ADC_Select_CH0();
+//		adc_value4 = HAL_ADC_GetValue(&hadc1);
+//		counter = 1;
+//		break;
+//
+//	case 1:
+//		ADC_Select_CH1();
+//		adc_value2 = HAL_ADC_GetValue(&hadc1);
+//		counter = 2;
+//		break;
+//
+//	case 2:
+//		ADC_Select_CH4();
+//		adc_value5 = HAL_ADC_GetValue(&hadc1);
+//		counter = 3;
+//		break;
+//
+//	case 3:
+//		ADC_Select_CH8();
+//		adc_value6 = HAL_ADC_GetValue(&hadc1);
+//		counter = 4;
+//		break;
+//
+//	case 4:
+//		ADC_Select_CH10();
+//		adc_value3 = HAL_ADC_GetValue(&hadc1);
+//		counter = 5;
+//		break;
+//
+//	case 5:
+//		ADC_Select_CH11();
+//		adc_value1 = HAL_ADC_GetValue(&hadc1);
+//		counter = 0;
+//		break;
+//
+//	default:
+//		counter = 0;
+//		break;
+//	}
+//
+//	HAL_ADC_Start_IT(&hadc1);
 }
 /* USER CODE END 0 */
 
@@ -437,13 +587,15 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_ADC1_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-  //HAL_ADCEx_Callibration_Start(&hadc1, ADC_SINGLE_ENDED);
   HAL_ADC_Start_IT(&hadc1);
+  //HAL_ADC_Start_DMA(&hadc1, tablicaPomiarowDynamicznych, MAX_POMIARY);
 
   //HAL_TIM_Base_Start_IT(&htim2);
   //HAL_TIM_Base_Start_IT(&htim3);
@@ -460,7 +612,7 @@ int main(void)
 
 	  //HAL_UART_Receive_IT(&huart2, &buffer[length], 1, HAL_MAX_DELAY);
 	  /*
-	  ADC_Select_CH0();
+	  ADC_Select_CH0();HAL_ADCEx_Calibration_Start(&hadc1)
 	  HAL_ADC_Start(&hadc1);
 	  HAL_ADC_PollForConversion(&hadc1, 1000);
 	  adc_value1=HAL_ADC_GetValue(&hadc1);
@@ -531,9 +683,9 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLM = 16;
-  RCC_OscInitStruct.PLL.PLLN = 336;
-  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+  RCC_OscInitStruct.PLL.PLLM = 8;
+  RCC_OscInitStruct.PLL.PLLN = 68;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 7;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -576,7 +728,7 @@ static void MX_ADC1_Init(void)
   /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
   */
   hadc1.Instance = ADC1;
-  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
   hadc1.Init.ScanConvMode = DISABLE;
   hadc1.Init.ContinuousConvMode = ENABLE;
@@ -585,7 +737,7 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc1.Init.NbrOfConversion = 1;
-  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.DMAContinuousRequests = ENABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
@@ -594,9 +746,9 @@ static void MX_ADC1_Init(void)
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Channel = ADC_CHANNEL_11;
   sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;
+  sConfig.SamplingTime = ADC_SAMPLETIME_56CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -604,6 +756,52 @@ static void MX_ADC1_Init(void)
   /* USER CODE BEGIN ADC1_Init 2 */
 
   /* USER CODE END ADC1_Init 2 */
+
+}
+
+/**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = TIM1_PERIOD;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = TIM1_PRESCALER;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
 
 }
 
@@ -731,6 +929,22 @@ static void MX_USART2_UART_Init(void)
 }
 
 /**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA2_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA2_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -768,10 +982,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void sendDataRamkaDynamT(int *tablicaPomiarowDynamicznych, int czasPomiaruDynam)
+void sendDataRamkaDynamT(uint32_t *tablicaPomiarowDynamicznych, int czasPomiaruDynam)
 {
-    const int maxBufSize = 8192;  // Większy bufor, aby zmieścić całą ramkę
+    const int maxBufSize = 3*MAX_POMIARY;  // Większy bufor, aby zmieścić całą ramkę
     char frame[maxBufSize];      // Bufor dla całej ramki
+    int czasPomNa2 = czasPomiaruDynam/2;
     int index = 0;
 
     // Dodanie nagłówka "P D [C5 lub C6]"
@@ -780,10 +995,22 @@ void sendDataRamkaDynamT(int *tablicaPomiarowDynamicznych, int czasPomiaruDynam)
     // Dodanie informacji o rodzaju pomiaru: "T [czasPomiaruDynam]"
     index += snprintf(frame + index, sizeof(frame) - index, "T %d ", czasPomiaruDynam);
 
+
+    int wyliczonyIdxHistorii = indeksHistorii;
+    // Dodanie historii pomiaru
+    for ( int licznik = 0; licznik<ROZM_HISTORIA; licznik++)
+    {
+    	index += snprintf(frame + index, sizeof(frame) - index, "%lu ", tablicaHistoriiPrzedPomiarem[wyliczonyIdxHistorii]);
+    	wyliczonyIdxHistorii = (wyliczonyIdxHistorii + 1) % ROZM_HISTORIA;
+    }
     // Dodanie danych pomiarowych
-    for (int i = 0; i < liczbaPomiarow; i++) {
-        int pozycja = (licznikPoczatku + i) % liczbaPomiarow;
-        index += snprintf(frame + index, sizeof(frame) - index, "%d ", tablicaPomiarowDynamicznych[pozycja]);
+
+    for (int i = 0; i < czasPomNa2; i++) {
+        //int pozycja = (licznikPoczatku + i) % liczbaPomiarow;
+    	if(tablicaPomiarowDynamicznych[i] > 0)
+    	{
+        index += snprintf(frame + index, sizeof(frame) - index, "%lu ", tablicaPomiarowDynamicznych[i] );
+    	}
     }
 
     // Usuwanie ostatniej spacji, jeśli istnieje
@@ -801,8 +1028,8 @@ void sendDataRamkaDynamT(int *tablicaPomiarowDynamicznych, int czasPomiaruDynam)
     HAL_UART_Transmit(&huart2, (uint8_t *)frame, index, HAL_MAX_DELAY);
 
     // Wyczyszczenie tablicy po wysłaniu danych
-    licznikPoczatku = 0;  // Reset wskaźnika na początek
-    liczbaPomiarow = 0;   // Reset liczby pomiarów
+//    licznikPoczatku = 0;  // Reset wskaźnika na początek
+//    liczbaPomiarow = 0;   // Reset liczby pomiarów
     memset(tablicaPomiarowDynamicznych, 0, sizeof(int) * MAX_POMIARY);  // Zerowanie zawartości tablicy
 }
 
@@ -846,10 +1073,21 @@ void receive_data_frame(uint16_t length) {
 
 void process_received_data(uint8_t *data, uint16_t length) {
     char command = data[0];  // 'command' jest teraz w pierwszym znaku danych
+    idPomiaru = command;
+
+
+    if ( !(command == 'M') )
+    {
 
     strncpy(idCzujnika, (char*)&data[2], 2);  // Kopiowanie dwóch znaków od indeksu 2
     idCzujnika[2] = '\0';
 
+    } else {
+
+    	idCzujnika[0] = '0';
+    	idCzujnika[1] = '0';
+    	idCzujnika[2] = '\0';
+    }
     // Wyszukiwanie wartości po "P "
         char *ptrP = strstr((char *)data, "P ");
         if (ptrP != NULL) {
@@ -875,14 +1113,21 @@ void process_received_data(uint8_t *data, uint16_t length) {
             printf("Błąd: Nie znaleziono ciągu 'P '.\r\n");
         }
 
-    //printf("IdCzujnika: %s\r\n", idCzujnika);
-    //printf("Command: %c\r\n", command);
+    printf("IdCzujnika: %s\r\n", idCzujnika);
+    printf("Command: %c\r\n", command);
 
-    if (command == 'S') {
+    if (command == 'S' || command == 'M') {
+
+    	HAL_ADC_Stop_DMA(&hadc1);
         HAL_TIM_Base_Start_IT(&htim2);
         HAL_TIM_Base_Stop_IT(&htim3);
+
     } else if (command == 'D') {
-        if (strncmp((char*)data + 5, "T", 1) == 0) {  // Komenda "T" zaczyna się od indeksu 5
+
+//    	HAL_ADC_STOP(&hadc1);
+    	HAL_ADC_Stop(&hadc1);
+
+    	if (strncmp((char*)data + 5, "T", 1) == 0) {  // Komenda "T" zaczyna się od indeksu 5
             strncpy(idPomiaruDynam, "T", 2);
             idPomiaruDynam[2] = '\0';  // Dodanie końca stringa
 
@@ -896,9 +1141,27 @@ void process_received_data(uint8_t *data, uint16_t length) {
             strncpy(idPomiaruDynam, "X", 2);
             idPomiaruDynam[2] = '\0';  // Dodanie końca stringa
         }
+    	if ( idCzujnika[1] == '5' )
+    	{
+    		ADC_Select_CH11();
+
+    	} else if( idCzujnika[1] == '6' ) {
+
+    		ADC_Select_CH10();
+    	}
+    	flagaZmiany = 0;
         HAL_TIM_Base_Stop_IT(&htim2);
         HAL_TIM_Base_Start_IT(&htim3);
     }
+}
+
+void HAL_Delay_us(uint16_t us) {
+    uint32_t start = __HAL_TIM_GET_COUNTER(&htim1); // Załóżmy, że htim1 jest skonfigurowany na 1 MHz (1 µs na tick)
+    while ((__HAL_TIM_GET_COUNTER(&htim1) - start) < us);
+}
+
+void HAL_ADC_ErrorCallback(ADC_HandleTypeDef *hadc) {
+    printf("ADC DMA Error\n");
 }
 
 /* USER CODE END 4 */
