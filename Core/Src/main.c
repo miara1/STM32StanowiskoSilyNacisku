@@ -608,7 +608,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  //printf("Printujeee\r\n");
+	  printf("Printujeee\r\n");
 
 	  //HAL_UART_Receive_IT(&huart2, &buffer[length], 1, HAL_MAX_DELAY);
 	  /*
