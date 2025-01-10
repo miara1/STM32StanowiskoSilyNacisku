@@ -1,6 +1,6 @@
 Configuration	DoPracy2
-STM32CubeMX 	6.3.0
-Date	01/12/2022
+STM32CubeMX 	6.13.0
+Date	12/19/2024
 MCU	STM32F401RETx
 
 
@@ -12,13 +12,16 @@ ADC1	IN4	ADC1_IN4	PA4
 ADC1	IN8	ADC1_IN8	PB0
 ADC1	IN10	ADC1_IN10	PC0
 ADC1	IN11	ADC1_IN11	PC1
-RCC	BYPASS Clock Source	RCC_OSC_IN	PH0 - OSC_IN
-RCC	BYPASS Clock Source	RCC_OSC_OUT	PH1 - OSC_OUT
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PH0 - OSC_IN
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PH1 - OSC_OUT
 RCC	Crystal/Ceramic Resonator	RCC_OSC32_IN	PC14-OSC32_IN
 RCC	Crystal/Ceramic Resonator	RCC_OSC32_OUT	PC15-OSC32_OUT
 SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
 SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
 SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM2	Internal Clock	TIM2_VS_ClockSourceINT	VP_TIM2_VS_ClockSourceINT
+TIM3	Internal Clock	TIM3_VS_ClockSourceINT	VP_TIM3_VS_ClockSourceINT
+TIM4	Internal Clock	TIM4_VS_ClockSourceINT	VP_TIM4_VS_ClockSourceINT
 USART2	Asynchronous	USART2_RX	PA3
 USART2	Asynchronous	USART2_TX	PA2
 
@@ -49,13 +52,16 @@ ADC1	IN4	ADC1_IN4	PA4
 ADC1	IN8	ADC1_IN8	PB0
 ADC1	IN10	ADC1_IN10	PC0
 ADC1	IN11	ADC1_IN11	PC1
-RCC	BYPASS Clock Source	RCC_OSC_IN	PH0 - OSC_IN
-RCC	BYPASS Clock Source	RCC_OSC_OUT	PH1 - OSC_OUT
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PH0 - OSC_IN
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PH1 - OSC_OUT
 RCC	Crystal/Ceramic Resonator	RCC_OSC32_IN	PC14-OSC32_IN
 RCC	Crystal/Ceramic Resonator	RCC_OSC32_OUT	PC15-OSC32_OUT
 SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
 SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
 SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM2	Internal Clock	TIM2_VS_ClockSourceINT	VP_TIM2_VS_ClockSourceINT
+TIM3	Internal Clock	TIM3_VS_ClockSourceINT	VP_TIM3_VS_ClockSourceINT
+TIM4	Internal Clock	TIM4_VS_ClockSourceINT	VP_TIM4_VS_ClockSourceINT
 USART2	Asynchronous	USART2_RX	PA3
 USART2	Asynchronous	USART2_TX	PA2
 
@@ -86,9 +92,9 @@ SOFTWARE PROJECT
 
 Project Settings : 
 Project Name : DoPracy2
-Project Folder : C:\Users\bobkr\STM32CubeIDE\workspace_1.7.0\DoPracy2
+Project Folder : /home/miara123/Studia/PracaInzynierska/ProgramSTMDoPracy2
 Toolchain / IDE : STM32CubeIDE
-Firmware Package Name and Version : STM32Cube FW_F4 V1.26.2
+Firmware Package Name and Version : STM32Cube FW_F4 V1.28.1
 
 
 Code Generation Settings : 
