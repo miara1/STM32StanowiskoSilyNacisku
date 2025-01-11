@@ -1,0 +1,3 @@
+../Core/Src/komunikacjaUART.c:9:6:receive_data_frame	32	static
+../Core/Src/komunikacjaUART.c:44:6:sendDataRamkaDynamT	80	dynamic
+../Core/Src/komunikacjaUART.c:92:6:HAL_UART_RxCpltCallback	16	static

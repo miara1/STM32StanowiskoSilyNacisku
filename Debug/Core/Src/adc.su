@@ -1,0 +1,8 @@
+../Core/Src/adc.c:14:6:ADC_Select_CH0	24	static
+../Core/Src/adc.c:27:6:ADC_Select_CH1	24	static
+../Core/Src/adc.c:39:6:ADC_Select_CH4	24	static
+../Core/Src/adc.c:51:6:ADC_Select_CH8	24	static
+../Core/Src/adc.c:63:6:ADC_Select_CH10	24	static
+../Core/Src/adc.c:75:6:ADC_Select_CH11	24	static
+../Core/Src/adc.c:87:6:HAL_ADC_ConvCpltCallback	16	static
+../Core/Src/adc.c:100:6:HAL_ADC_ErrorCallback	16	static

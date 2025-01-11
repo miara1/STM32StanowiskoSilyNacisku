@@ -1,0 +1,2 @@
+../Core/Src/crc.c:3:10:crc16_ccitt_false	4
+../Core/Src/crc.c:14:10:parse_crc_from_text	1

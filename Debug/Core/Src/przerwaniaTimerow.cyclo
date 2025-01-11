@@ -1,0 +1,4 @@
+../Core/Src/przerwaniaTimerow.c:3:6:HAL_TIM_PeriodElapsedCallback	4
+../Core/Src/przerwaniaTimerow.c:32:6:obsluzPrzerwanieMatrycy	7
+../Core/Src/przerwaniaTimerow.c:87:6:obsluzPrzerwanieDynam	16
+../Core/Src/przerwaniaTimerow.c:163:6:obsluzPrzerwanieStat	4
