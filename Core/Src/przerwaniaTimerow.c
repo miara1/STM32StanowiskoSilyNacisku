@@ -1,5 +1,20 @@
+/*!
+ * @file przerwaniaTimerow.c
+ * @brief Implementacja funkcji obsługujących przerwania timerów
+ *
+ * Plik zawiera implementację funkcji obsługujących przerwania timerów,
+ * odpowiedzialnych za realizację pomiarów w różnych trybach, takich jak
+ * matryca, pomiar dynamiczny i statyczny.
+ */
+
 #include "przerwaniaTimerow.h"
 
+/*!
+ * Funkcja sprawdza, który timer wywołał przerwanie, zatrzymuje pozostałe timery
+ * i wywołuje odpowiednią funkcję obsługi przerwania.
+ *
+ * @param[in] htim - wskaźnik na uchwyt timera
+ */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 
@@ -29,10 +44,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	}
 }
 
+/*!
+ * Funkcja wykonuje odczyty z czterech kanałów ADC w trybie matrycy.
+ * Wyniki pomiarów są zapisywane w strukturze ,,wartosciADC'' i wysyłane przez UART.
+ *
+ * Obsługa pomiarów realizowana jest za pomocą instrukcji ,,switch'', gdzie w każdej
+ * iteracji wykonywany jest odczyt z kolejnego kanału ADC. Wyniki pomiarów są
+ * przechowywane w odpowiednich polach struktury ,,wartosciADC''. Po wykonaniu
+ * odczytów wszystkich kanałów, dane są formatowane i wysyłane przez UART.
+ */
 void obsluzPrzerwanieMatrycy()
 {
 	static uint8_t licznikDoPomiaruMatrycy = 0;
-	if( warunkiPomiaru.idPomiaru == 'M' && warunkiPomiaru.idCzujnika[0] == '0' )
+	if( warunkiPomiaru.idPomiaru == ID_POMIAR_MATRYCY && warunkiPomiaru.idCzujnika[0] == ID_CZUJNIK_BRAK )
 	{
 		switch(licznikDoPomiaruMatrycy)
 		{
@@ -84,10 +108,20 @@ void obsluzPrzerwanieMatrycy()
 	}
 }
 
+/*!
+ * Funkcja realizuje obsługę pomiarów dynamicznych z czujnika 5 i 6.
+ * Na podstawie warunków pomiaru oraz wartości progowych określa, czy należy
+ * rozpocząć rejestrację danych pomiarowych w trybie czasowym lub bez limitu.
+ *
+ * Wykonywane operacje:
+ * - Odczyt wartości z wybranego kanału ADC na podstawie ustawień czujnika.
+ * - Aktualizacja tablicy historii pomiarów przed detekcją zmiany.
+ * - Sprawdzanie, czy wartość progowa została przekroczona i inicjacja odpowiedniego trybu pomiarowego.
+ */
 void obsluzPrzerwanieDynam()
 {
 	int tempValPom = 0;
-	if ( warunkiPomiaru.idCzujnika[1] == '5' )
+	if ( warunkiPomiaru.idCzujnika[1] == ID_CZUJNIK_CP_150 )
 	{
 		HAL_ADC_Stop(&hadc1);
 		ADC_Select_CH11();
@@ -98,7 +132,7 @@ void obsluzPrzerwanieDynam()
 
 		tempValPom = wartosciADC.wartosc5;
 
-	} else if( warunkiPomiaru.idCzujnika[1] == '6' ) {
+	} else if( warunkiPomiaru.idCzujnika[1] == ID_CZUJNIK_CP_154 ) {
 
 		HAL_ADC_Stop(&hadc1);
 		ADC_Select_CH10();
@@ -116,15 +150,15 @@ void obsluzPrzerwanieDynam()
 		warunkiPomiaru.indeksHistorii = (warunkiPomiaru.indeksHistorii + 1) % ROZM_HISTORIA;  // Przejście na kolejny indeks cyklicznie
 	}
 
-	if (( (wartosciADC.wartosc6 > warunkiPomiaru.progPomiaruDynam) && warunkiPomiaru.idCzujnika[1] == '6') ||
-			( (wartosciADC.wartosc5 > warunkiPomiaru.progPomiaruDynam) && warunkiPomiaru.idCzujnika[1] == '5'))
+	if (( (wartosciADC.wartosc6 > warunkiPomiaru.progPomiaruDynam) && warunkiPomiaru.idCzujnika[1] == ID_CZUJNIK_CP_154) ||
+			( (wartosciADC.wartosc5 > warunkiPomiaru.progPomiaruDynam) && warunkiPomiaru.idCzujnika[1] == ID_CZUJNIK_CP_150))
 	{
-		if( warunkiPomiaru.idPomiaruDynam[0] == 'T' )
+		if( warunkiPomiaru.idPomiaruDynam[0] == ID_DYNAM_CZASOWY )
 		{
 			// Sprawdzenie, czy zmieniło się z <30 na >30
 			if (!warunkiPomiaru.flagaZmiany)
 			{
-				if( warunkiPomiaru.idCzujnika[1] == '5')
+				if( warunkiPomiaru.idCzujnika[1] == ID_CZUJNIK_CP_150)
 				{
 					printf("T oraz 5");
 					//printf("ZaczynamDynamT!!!\r\n");
@@ -133,7 +167,7 @@ void obsluzPrzerwanieDynam()
 					HAL_ADC_Start_DMA(&hadc1, (uint32_t*)danePomiaroweDynam.tablicaPomiarowDynamicznych, MAX_POMIARY);
 					warunkiPomiaru.flagaZmiany = 1;  // Ustawienie flagi zmiany
 
-				} else if (warunkiPomiaru.idCzujnika[1] == '6') {
+				} else if ( warunkiPomiaru.idCzujnika[1] == ID_CZUJNIK_CP_154 ) {
 
 					HAL_ADC_Stop(&hadc1);
 					ADC_Select_CH10();
@@ -143,16 +177,16 @@ void obsluzPrzerwanieDynam()
 
 			}
 
-		} else if(strcmp(warunkiPomiaru.idPomiaruDynam, "X") == 0) {
+		} else if( warunkiPomiaru.idPomiaruDynam[0] == ID_DYNAM_BEZ_LIMITU ) {
 
 			if(!warunkiPomiaru.flagaZmiany)
 			{
-				if(strcmp(warunkiPomiaru.idCzujnika, "C5") == 0)
+				if( warunkiPomiaru.idCzujnika[1] == ID_CZUJNIK_CP_150 )
 				{
 					//						HAL_ADC_Start_DMA(hadc, dma_buff, iloscPunktowDoSredniej);
 					//						flagaZmiany = 1;
 
-				} else if(strcmp(warunkiPomiaru.idCzujnika, "C6") == 0)
+				} else if( warunkiPomiaru.idCzujnika[1] == ID_CZUJNIK_CP_154 )
 
 					printf("D C6 oraz X\r\n");
 			}
@@ -160,12 +194,23 @@ void obsluzPrzerwanieDynam()
 	}
 }
 
+/*!
+ * Funkcja realizuje pomiary statyczne dla czujników CP150 oraz CP154.
+ * Na podstawie konfiguracji w strukturze ,,warunkiPomiaru'' wybierany jest odpowiedni kanał ADC.
+ * Wyniki pomiarów są przesyłane przez UART w postaci ramki z obliczonym CRC.
+ *
+ * Wykonywane operacje:
+ * - Sprawdzenie, czy tryb pracy to pomiar statyczny (,,ID_POMIAR_STAT'').
+ * - Odczyt wartości z ADC dla czujnika 5 (,,ID_CZUJNIK_CP_150'') lub 6 (,,ID_CZUJNIK_CP_154'').
+ * - Generacja ramki danych w formacie „P S Cx <wartość>” oraz obliczenie sumy kontrolnej CRC.
+ * - Wysłanie ramki przez UART.
+ */
 void obsluzPrzerwanieStat()
 {
-	if( warunkiPomiaru.idPomiaru == 'S' )
+	if( warunkiPomiaru.idPomiaru == ID_POMIAR_STAT )
 	{
 
-		if(strcmp(warunkiPomiaru.idCzujnika, "C5") == 0)
+		if( warunkiPomiaru.idCzujnika[1] == ID_CZUJNIK_CP_150 )
 		{
 			  HAL_ADC_Stop(&hadc1);
 			  ADC_Select_CH11();
@@ -179,7 +224,7 @@ void obsluzPrzerwanieStat()
 			  printf( "%s %0*d\r\n", dane, 5, crc16);
 		}
 
-		if(strcmp(warunkiPomiaru.idCzujnika, "C6") == 0)
+		if( warunkiPomiaru.idCzujnika[1] == ID_CZUJNIK_CP_154 )
 		{
 			  HAL_ADC_Stop(&hadc1);
 			  ADC_Select_CH10();

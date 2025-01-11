@@ -1,0 +1,9 @@
+<map id="adc.h" name="adc.h">
+<area shape="rect" id="Node000001" title="Deklaracje funkcji i struktur związanych z obsługą ADC." alt="" coords="71,5,129,31"/>
+<area shape="rect" id="Node000002" href="$adc_8c.html" title="Implementacja funkcji i callbacków związanych z obsługą ADC." alt="" coords="5,79,61,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,43,46,80,42,77,78,39"/>
+<area shape="rect" id="Node000003" href="$przerwaniaTimerow_8h.html" title="Deklaracje funkcji obsługujących przerwania timerów." alt="" coords="85,79,248,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,39,158,77,154,80,119,43"/>
+<area shape="rect" id="Node000004" href="$przerwaniaTimerow_8c.html" title="Implementacja funkcji obsługujących przerwania timerów." alt="" coords="86,152,247,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="169,118,169,152,164,152,164,118"/>
+</map>

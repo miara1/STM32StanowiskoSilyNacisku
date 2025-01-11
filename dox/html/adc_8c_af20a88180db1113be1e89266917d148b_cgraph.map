@@ -1,0 +1,7 @@
+<map id="HAL_ADC_ConvCpltCallback" name="HAL_ADC_ConvCpltCallback">
+<area shape="rect" id="Node000001" title="Callback wywoływany po zakończeniu konwersji ADC." alt="" coords="5,5,211,31"/>
+<area shape="rect" id="Node000002" href="$komunikacjaUART_8c.html#afd23f4f3b7f09675f4fe6faa95c8d317" title="Funkcja wysyłająca ramkę danych dynamicznych dla pomiaru z ustalonym czasem." alt="" coords="259,5,443,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,15,245,15,245,21,211,21"/>
+<area shape="rect" id="Node000003" href="$crc_8c.html#a8fca00596c1e6a7e22df92fc52d620ec" title="Oblicza wartość CRC16 zgodnie ze standardem CCITT FALSE." alt="" coords="491,5,621,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="443,15,477,15,477,21,443,21"/>
+</map>

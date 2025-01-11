@@ -1,14 +1,33 @@
+/*!
+ * @file komunikacjaUART.c
+ * @brief Implementacja funkcji i callbacków do obsługi komunikacji UART
+ *
+ * Plik zawiera implementację funkcji odpowiedzialnych za obsługę komunikacji UART.
+ */
+
 #include "komunikacjaUART.h"
 
+/*!
+ * @brief Inicjalizacja struktury ,,OdbiorUART''
+ *
+ * Zmienna globalna ,,odbiorUART'' przechowuje dane odbioru UART,
+ * w tym ostatni odebrany bajt oraz bufor dla odebranych ramek danych.
+ * Struktura jest inicjalizowana zerami.
+ */
 OdbiorUART odbiorUART = {
 		.buffer = {0},
 		.receivedData = 0
 };
 
-// Funkcja odbierająca ramkę danych
+/*!
+ * Funkcja analizuje odebraną ramkę, sprawdzając jej poprawność,
+ * a następnie przekazuje dane do dalszego przetwarzania.
+ *
+ * @param[in] length - długość odebranej ramki
+ */
 void receive_data_frame(uint16_t length) {
     // Sprawdzamy, czy ramka jest wystarczająco długa oraz czy zaczyna się od 'U'
-    if (length < 9 || odbiorUART.buffer[0] != 'U') {  // Zakładamy minimalną długość: U + dane + 4 znaki CRC + \r\n
+    if (length < 9 || odbiorUART.buffer[0] != NAGLOWEK_RAMKI_APLIKACJI) {  // Zakładamy minimalną długość: U + dane + 4 znaki CRC + \r\n
         printf("Błąd: Niepoprawna ramka lub brak nagłówka 'U'\n");
         return;
     }
@@ -41,6 +60,13 @@ void receive_data_frame(uint16_t length) {
     }
 }
 
+/*!
+ * Funkcja tworzy ramkę danych dynamicznych dla pomiaru z
+ * ustalonym czasem i wysyła ją przez UART.
+ *
+ * @param[in] tablicaPomiarowDynamicznych - tablica z danymi pomiarowymi
+ * @param[in] czasPomiaruDynam - czas pomiaru danych dynamicznych
+ */
 void sendDataRamkaDynamT(uint32_t *tablicaPomiarowDynamicznych, int czasPomiaruDynam)
 {
     const int maxBufSize = 3*MAX_POMIARY;  // Większy bufor, aby zmieścić całą ramkę
@@ -89,12 +115,18 @@ void sendDataRamkaDynamT(uint32_t *tablicaPomiarowDynamicznych, int czasPomiaruD
     memset(tablicaPomiarowDynamicznych, 0, sizeof(int) * MAX_POMIARY);  // Zerowanie zawartości tablicy
 }
 
+/*!
+ * Funkcja obsługuje odbiór pojedynczych bajtów, budując pełną ramkę danych
+ * i przekazując ją do przetwarzania.
+ *
+ * @param[in] huart - wskaźnik na uchwyt UART
+ */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     if (huart->Instance == USART2) {
         static uint16_t length = 0;
 
         // Sprawdzamy, czy ramka zaczyna się od 'U'
-        if (length == 0 && odbiorUART.receivedData != 'U') {
+        if (length == 0 && odbiorUART.receivedData != NAGLOWEK_RAMKI_APLIKACJI) {
         	printf("Nie ma U na poczatku\r\n");
             // Ignorujemy, jeśli pierwszy znak nie jest 'U'
             HAL_UART_Receive_IT(&huart2, &odbiorUART.receivedData, 1);

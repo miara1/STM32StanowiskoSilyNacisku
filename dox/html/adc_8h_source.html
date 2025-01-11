@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Stanowisko badania czujnikow sily nacisku typu FSR: Plik źródłowy adc.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Stanowisko badania czujnikow sily nacisku typu FSR<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('adc_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">adc.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="adc_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef INC_ADC_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define INC_ADC_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="przetworzDane_8h.html">przetworzDane.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="komunikacjaUART_8h.html">komunikacjaUART.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structWartosciADC.html">   19</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structWartosciADC.html#a45bae862673c555abb9dfec89e1b319a">   22</a></span>    <span class="keyword">volatile</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structWartosciADC.html#a45bae862673c555abb9dfec89e1b319a">wartosc1</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structWartosciADC.html#ad7cf8fb44028658579ae16c39407c283">   24</a></span>    <span class="keyword">volatile</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structWartosciADC.html#ad7cf8fb44028658579ae16c39407c283">wartosc2</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structWartosciADC.html#acd318ce44ffa4c53a30747e099296b2e">   26</a></span>    <span class="keyword">volatile</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structWartosciADC.html#acd318ce44ffa4c53a30747e099296b2e">wartosc3</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structWartosciADC.html#a47e0f23e8d479b7ce3cfd61a365f3450">   28</a></span>    <span class="keyword">volatile</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structWartosciADC.html#a47e0f23e8d479b7ce3cfd61a365f3450">wartosc4</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structWartosciADC.html#a2d2e2984354c1d7602f9e855aaa5aeab">   30</a></span>    <span class="keyword">volatile</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structWartosciADC.html#a2d2e2984354c1d7602f9e855aaa5aeab">wartosc5</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structWartosciADC.html#a95ff62dadb9a68a308200bdb47badee1">   32</a></span>    <span class="keyword">volatile</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structWartosciADC.html#a95ff62dadb9a68a308200bdb47badee1">wartosc6</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}<a class="code hl_struct" href="structWartosciADC.html">WartosciADC</a>;</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">extern</span> <a class="code hl_struct" href="structWartosciADC.html">WartosciADC</a> <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8h.html#a251b2b87677061134af81bc00ad40c70">ADC_Select_CH0</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8h.html#acb840db66fc6cc2cc8f57bd208fabd0b">ADC_Select_CH1</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8h.html#a2a25b5ac54f6f42633e4d07a8583aeca">ADC_Select_CH4</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8h.html#a98dfc284687b9ac81eb956ee89b6b6b6">ADC_Select_CH8</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8h.html#aff33c94ce2334041e61de9840a3c1ec0">ADC_Select_CH10</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8h.html#ab2ee4335a727ffed87c6dde821a92437">ADC_Select_CH11</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8h.html#af20a88180db1113be1e89266917d148b">HAL_ADC_ConvCpltCallback</a>(ADC_HandleTypeDef* hadc);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8h.html#adea1a55c5199d5cb4cfc1fdcd32be1b2">HAL_ADC_ErrorCallback</a>(ADC_HandleTypeDef *hadc);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#endif </span><span class="comment">/* INC_ADC_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aadc_8h_html_a251b2b87677061134af81bc00ad40c70"><div class="ttname"><a href="adc_8h.html#a251b2b87677061134af81bc00ad40c70">ADC_Select_CH0</a></div><div class="ttdeci">void ADC_Select_CH0(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 1.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00035">adc.c:35</a></div></div>
+<div class="ttc" id="aadc_8h_html_a2a25b5ac54f6f42633e4d07a8583aeca"><div class="ttname"><a href="adc_8h.html#a2a25b5ac54f6f42633e4d07a8583aeca">ADC_Select_CH4</a></div><div class="ttdeci">void ADC_Select_CH4(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 3.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00072">adc.c:72</a></div></div>
+<div class="ttc" id="aadc_8h_html_a772eaff6e8d4c68d3d316bc765078974"><div class="ttname"><a href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a></div><div class="ttdeci">WartosciADC wartosciADC</div><div class="ttdoc">Struktura przechowująca wartości odczytane z kanałów ADC.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00018">adc.c:18</a></div></div>
+<div class="ttc" id="aadc_8h_html_a98dfc284687b9ac81eb956ee89b6b6b6"><div class="ttname"><a href="adc_8h.html#a98dfc284687b9ac81eb956ee89b6b6b6">ADC_Select_CH8</a></div><div class="ttdeci">void ADC_Select_CH8(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 4.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00090">adc.c:90</a></div></div>
+<div class="ttc" id="aadc_8h_html_ab2ee4335a727ffed87c6dde821a92437"><div class="ttname"><a href="adc_8h.html#ab2ee4335a727ffed87c6dde821a92437">ADC_Select_CH11</a></div><div class="ttdeci">void ADC_Select_CH11(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 5.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00126">adc.c:126</a></div></div>
+<div class="ttc" id="aadc_8h_html_acb840db66fc6cc2cc8f57bd208fabd0b"><div class="ttname"><a href="adc_8h.html#acb840db66fc6cc2cc8f57bd208fabd0b">ADC_Select_CH1</a></div><div class="ttdeci">void ADC_Select_CH1(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 2.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00054">adc.c:54</a></div></div>
+<div class="ttc" id="aadc_8h_html_adea1a55c5199d5cb4cfc1fdcd32be1b2"><div class="ttname"><a href="adc_8h.html#adea1a55c5199d5cb4cfc1fdcd32be1b2">HAL_ADC_ErrorCallback</a></div><div class="ttdeci">void HAL_ADC_ErrorCallback(ADC_HandleTypeDef *hadc)</div><div class="ttdoc">Callback obsługujący błąd ADC.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00165">adc.c:165</a></div></div>
+<div class="ttc" id="aadc_8h_html_af20a88180db1113be1e89266917d148b"><div class="ttname"><a href="adc_8h.html#af20a88180db1113be1e89266917d148b">HAL_ADC_ConvCpltCallback</a></div><div class="ttdeci">void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)</div><div class="ttdoc">Callback wywoływany po zakończeniu konwersji ADC.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00144">adc.c:144</a></div></div>
+<div class="ttc" id="aadc_8h_html_aff33c94ce2334041e61de9840a3c1ec0"><div class="ttname"><a href="adc_8h.html#aff33c94ce2334041e61de9840a3c1ec0">ADC_Select_CH10</a></div><div class="ttdeci">void ADC_Select_CH10(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 6.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00108">adc.c:108</a></div></div>
+<div class="ttc" id="akomunikacjaUART_8h_html"><div class="ttname"><a href="komunikacjaUART_8h.html">komunikacjaUART.h</a></div><div class="ttdoc">Deklaracje funkcji i struktur do obsługi komunikacji UART.</div></div>
+<div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
+<div class="ttc" id="aprzetworzDane_8h_html"><div class="ttname"><a href="przetworzDane_8h.html">przetworzDane.h</a></div><div class="ttdoc">Deklaracje struktur i funkcji do przetwarzania danych.</div></div>
+<div class="ttc" id="astructWartosciADC_html"><div class="ttname"><a href="structWartosciADC.html">WartosciADC</a></div><div class="ttdoc">Struktura przechowująca wartości ADC.</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00019">adc.h:20</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_a2d2e2984354c1d7602f9e855aaa5aeab"><div class="ttname"><a href="structWartosciADC.html#a2d2e2984354c1d7602f9e855aaa5aeab">WartosciADC::wartosc5</a></div><div class="ttdeci">volatile int wartosc5</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00030">adc.h:30</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_a45bae862673c555abb9dfec89e1b319a"><div class="ttname"><a href="structWartosciADC.html#a45bae862673c555abb9dfec89e1b319a">WartosciADC::wartosc1</a></div><div class="ttdeci">volatile int wartosc1</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00022">adc.h:22</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_a47e0f23e8d479b7ce3cfd61a365f3450"><div class="ttname"><a href="structWartosciADC.html#a47e0f23e8d479b7ce3cfd61a365f3450">WartosciADC::wartosc4</a></div><div class="ttdeci">volatile int wartosc4</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00028">adc.h:28</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_a95ff62dadb9a68a308200bdb47badee1"><div class="ttname"><a href="structWartosciADC.html#a95ff62dadb9a68a308200bdb47badee1">WartosciADC::wartosc6</a></div><div class="ttdeci">volatile int wartosc6</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00032">adc.h:32</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_acd318ce44ffa4c53a30747e099296b2e"><div class="ttname"><a href="structWartosciADC.html#acd318ce44ffa4c53a30747e099296b2e">WartosciADC::wartosc3</a></div><div class="ttdeci">volatile int wartosc3</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00026">adc.h:26</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_ad7cf8fb44028658579ae16c39407c283"><div class="ttname"><a href="structWartosciADC.html#ad7cf8fb44028658579ae16c39407c283">WartosciADC::wartosc2</a></div><div class="ttdeci">volatile int wartosc2</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00024">adc.h:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><a class="el" href="adc_8h.html">adc.h</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

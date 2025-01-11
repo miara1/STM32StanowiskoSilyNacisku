@@ -1,0 +1,18 @@
+<map id="obsluzPrzerwanieMatrycy" name="obsluzPrzerwanieMatrycy">
+<area shape="rect" id="Node000001" title="Obsługuje przerwanie związane z pomiarami matrycy." alt="" coords="5,104,195,129"/>
+<area shape="rect" id="Node000002" href="$adc_8c.html#a251b2b87677061134af81bc00ad40c70" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 1." alt="" coords="243,5,373,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,102,242,40,257,33,259,38,244,44,125,106"/>
+<area shape="rect" id="Node000004" href="$adc_8c.html#acb840db66fc6cc2cc8f57bd208fabd0b" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 2." alt="" coords="243,55,373,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="154,101,240,81,241,86,155,107"/>
+<area shape="rect" id="Node000005" href="$adc_8c.html#a2a25b5ac54f6f42633e4d07a8583aeca" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 3." alt="" coords="243,104,373,129"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="195,114,229,114,229,119,195,119"/>
+<area shape="rect" id="Node000006" href="$adc_8c.html#a98dfc284687b9ac81eb956ee89b6b6b6" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 4." alt="" coords="243,153,373,179"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="155,127,241,147,240,153,154,132"/>
+<area shape="rect" id="Node000007" href="$crc_8c.html#a8fca00596c1e6a7e22df92fc52d620ec" title="Oblicza wartość CRC16 zgodnie ze standardem CCITT FALSE." alt="" coords="243,203,373,228"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="125,127,244,188,261,195,259,200,242,192,123,132"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="421,80,532,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="346,28,374,40,441,71,438,76,372,44,344,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="374,74,408,80,407,85,373,80"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="373,105,407,100,408,105,374,110"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="342,151,372,138,436,109,438,114,374,143,344,156"/>
+</map>

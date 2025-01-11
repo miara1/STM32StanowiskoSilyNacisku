@@ -1,0 +1,9 @@
+<map id="receive_data_frame" name="receive_data_frame">
+<area shape="rect" id="Node000001" title="Funkcja przetwarzająca odebraną ramkę danych." alt="" coords="5,55,157,80"/>
+<area shape="rect" id="Node000002" href="$crc_8c.html#a8fca00596c1e6a7e22df92fc52d620ec" title="Oblicza wartość CRC16 zgodnie ze standardem CCITT FALSE." alt="" coords="225,5,356,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,52,222,31,224,36,137,57"/>
+<area shape="rect" id="Node000003" href="$crc_8c.html#aebcf12be90261bb2138b44732c0fd50b" title="Parsuje wartość CRC z tekstu." alt="" coords="213,55,368,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,65,199,65,199,70,158,70"/>
+<area shape="rect" id="Node000004" href="$przetworzDane_8c.html#a79ed7137d1c9cf2f34e805f29cc93b03" title="Przetwarza odebrane dane." alt="" coords="205,104,376,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="137,77,224,98,222,103,135,83"/>
+</map>

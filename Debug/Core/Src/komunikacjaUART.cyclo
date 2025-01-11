@@ -1,3 +1,3 @@
-../Core/Src/komunikacjaUART.c:9:6:receive_data_frame	4
-../Core/Src/komunikacjaUART.c:44:6:sendDataRamkaDynamT	6
-../Core/Src/komunikacjaUART.c:92:6:HAL_UART_RxCpltCallback	7
+../Core/Src/komunikacjaUART.c:28:6:receive_data_frame	4
+../Core/Src/komunikacjaUART.c:70:6:sendDataRamkaDynamT	6
+../Core/Src/komunikacjaUART.c:124:6:HAL_UART_RxCpltCallback	7

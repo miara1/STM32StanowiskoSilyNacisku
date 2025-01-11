@@ -1,0 +1,10 @@
+<map id="obsluzPrzerwanieDynam" name="obsluzPrzerwanieDynam">
+<area shape="rect" id="Node000001" title="Obsługuje przerwanie związane z pomiarami dynamicznymi." alt="" coords="5,31,188,56"/>
+<area shape="rect" id="Node000002" href="$adc_8c.html#aff33c94ce2334041e61de9840a3c1ec0" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 6." alt="" coords="236,5,375,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,30,222,25,222,31,189,35"/>
+<area shape="rect" id="Node000004" href="$adc_8c.html#ab2ee4335a727ffed87c6dde821a92437" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 5." alt="" coords="236,55,375,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="189,51,222,55,222,60,188,57"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="423,31,533,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="375,26,410,31,409,36,374,31"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="374,55,409,50,409,56,375,60"/>
+</map>

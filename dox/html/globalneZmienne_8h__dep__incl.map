@@ -1,0 +1,40 @@
+<map id="globalneZmienne.h" name="globalneZmienne.h">
+<area shape="rect" id="Node000001" title="Deklaracje uchwytów dla komponentów systemowych STM32." alt="" coords="330,5,478,31"/>
+<area shape="rect" id="Node000002" href="$globalneZmienne_8c.html" title="Definicje uchwytów dla komponentów systemowych STM32." alt="" coords="265,79,412,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="385,43,351,80,347,77,382,39"/>
+<area shape="rect" id="Node000003" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="436,79,502,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="426,39,460,77,456,80,422,43"/>
+<area shape="rect" id="Node000004" href="$adc_8h.html" title="Deklaracje funkcji i struktur związanych z obsługą ADC." alt="" coords="35,299,92,324"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="422,107,371,114,326,117,250,117,214,119,177,125,137,136,91,154,63,168,42,182,26,200,11,226,9,246,18,265,33,283,49,297,45,301,29,286,13,268,4,247,6,225,22,196,39,178,60,164,89,150,135,131,176,120,214,114,250,112,326,111,370,108,422,101"/>
+<area shape="rect" id="Node000006" href="$przerwaniaTimerow_8h.html" title="Deklaracje funkcji obsługujących przerwania timerów." alt="" coords="338,372,501,397"/>
+<area shape="poly" id="edge16_Node000003_Node000006" title=" " alt="" coords="489,113,516,155,541,209,550,238,553,268,549,298,538,325,524,343,506,356,468,374,466,370,504,352,520,339,533,323,544,296,547,268,544,239,536,211,511,157,484,116"/>
+<area shape="rect" id="Node000008" href="$crc_8h.html" title="Deklaracje funkcji do obliczania i parsowania CRC." alt="" coords="385,152,438,177"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="453,116,423,154,419,150,449,113"/>
+<area shape="rect" id="Node000010" href="$komunikacjaUART_8h.html" title="Deklaracje funkcji i struktur do obsługi komunikacji UART." alt="" coords="186,225,336,251"/>
+<area shape="poly" id="edge14_Node000003_Node000010" title=" " alt="" coords="439,113,374,154,277,227,273,223,371,150,436,109"/>
+<area shape="rect" id="Node000012" href="$main_8c.html" title=": Main program body" alt="" coords="457,299,524,324"/>
+<area shape="poly" id="edge15_Node000003_Node000012" title=" " alt="" coords="474,118,492,298,486,299,469,118"/>
+<area shape="rect" id="Node000013" href="$przetworzDane_8h.html" title="Deklaracje struktur i funkcji do przetwarzania danych." alt="" coords="103,152,235,177"/>
+<area shape="poly" id="edge17_Node000003_Node000013" title=" " alt="" coords="423,107,219,155,218,149,422,102"/>
+<area shape="rect" id="Node000015" href="$stm32f4xx__hal__msp_8c.html" title="This file provides code for the MSP Initialization and de&#45;Initialization codes." alt="" coords="598,152,764,177"/>
+<area shape="poly" id="edge21_Node000003_Node000015" title=" " alt="" coords="516,106,648,149,646,154,514,111"/>
+<area shape="rect" id="Node000016" href="$stm32f4xx__it_8c.html" title="Interrupt Service Routines." alt="" coords="788,152,907,177"/>
+<area shape="poly" id="edge22_Node000003_Node000016" title=" " alt="" coords="516,99,788,150,787,155,515,104"/>
+<area shape="rect" id="Node000005" href="$adc_8c.html" title="Implementacja funkcji i callbacków związanych z obsługą ADC." alt="" coords="36,372,92,397"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="66,338,66,372,61,372,61,338"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="107,319,363,369,362,375,106,324"/>
+<area shape="rect" id="Node000007" href="$przerwaniaTimerow_8c.html" title="Implementacja funkcji obsługujących przerwania timerów." alt="" coords="339,445,500,471"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="422,411,422,445,417,445,417,411"/>
+<area shape="poly" id="edge13_Node000008_Node000006" title=" " alt="" coords="421,190,428,225,429,309,424,372,418,372,424,309,422,226,416,191"/>
+<area shape="rect" id="Node000009" href="$crc_8c.html" title="Implementacja funkcji do obliczania i parsowania CRC." alt="" coords="360,225,412,251"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="405,191,393,226,388,224,400,189"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="376,186,287,228,284,223,374,181"/>
+<area shape="poly" id="edge10_Node000010_Node000004" title=" " alt="" coords="217,258,94,302,92,297,216,253"/>
+<area shape="rect" id="Node000011" href="$komunikacjaUART_8c.html" title="Implementacja funkcji i callbacków do obsługi komunikacji UART." alt="" coords="186,299,336,324"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="264,264,264,299,258,299,258,264"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="312,252,458,297,456,302,310,257"/>
+<area shape="poly" id="edge18_Node000013_Node000004" title=" " alt="" coords="91,181,51,198,34,211,21,227,16,245,23,264,36,282,51,297,48,301,32,285,18,266,11,245,16,224,31,207,49,194,89,176"/>
+<area shape="poly" id="edge19_Node000013_Node000010" title=" " alt="" coords="196,183,247,223,244,227,193,188"/>
+<area shape="rect" id="Node000014" href="$przetworzDane_8c.html" title="Implementacja funkcji do przetwarzania danych." alt="" coords="30,225,161,251"/>
+<area shape="poly" id="edge20_Node000013_Node000014" title=" " alt="" coords="149,189,109,227,106,223,145,185"/>
+</map>

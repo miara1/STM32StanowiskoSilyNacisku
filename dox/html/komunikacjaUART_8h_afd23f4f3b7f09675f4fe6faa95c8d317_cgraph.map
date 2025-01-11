@@ -1,0 +1,5 @@
+<map id="sendDataRamkaDynamT" name="sendDataRamkaDynamT">
+<area shape="rect" id="Node000001" title="Funkcja wysyłająca ramkę danych dynamicznych dla pomiaru z ustalonym czasem." alt="" coords="5,5,189,31"/>
+<area shape="rect" id="Node000002" href="$crc_8c.html#a8fca00596c1e6a7e22df92fc52d620ec" title="Oblicza wartość CRC16 zgodnie ze standardem CCITT FALSE." alt="" coords="237,5,368,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,15,224,15,224,21,190,21"/>
+</map>

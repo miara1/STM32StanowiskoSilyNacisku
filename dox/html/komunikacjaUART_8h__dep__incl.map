@@ -1,0 +1,15 @@
+<map id="komunikacjaUART.h" name="komunikacjaUART.h">
+<area shape="rect" id="Node000001" title="Deklaracje funkcji i struktur do obsługi komunikacji UART." alt="" coords="153,5,303,31"/>
+<area shape="rect" id="Node000002" href="$adc_8h.html" title="Deklaracje funkcji i struktur związanych z obsługą ADC." alt="" coords="71,79,129,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,40,122,81,120,76,194,35"/>
+<area shape="rect" id="Node000006" href="$komunikacjaUART_8c.html" title="Implementacja funkcji i callbacków do obsługi komunikacji UART." alt="" coords="153,79,303,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="231,44,231,79,225,79,225,44"/>
+<area shape="rect" id="Node000007" href="$main_8c.html" title=": Main program body" alt="" coords="327,79,393,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="262,35,340,76,337,81,260,39"/>
+<area shape="rect" id="Node000003" href="$adc_8c.html" title="Implementacja funkcji i callbacków związanych z obsługą ADC." alt="" coords="5,152,61,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,116,46,154,42,150,78,113"/>
+<area shape="rect" id="Node000004" href="$przerwaniaTimerow_8h.html" title="Deklaracje funkcji obsługujących przerwania timerów." alt="" coords="85,152,248,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="122,113,158,150,154,154,119,116"/>
+<area shape="rect" id="Node000005" href="$przerwaniaTimerow_8c.html" title="Implementacja funkcji obsługujących przerwania timerów." alt="" coords="86,225,247,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="169,191,169,225,164,225,164,191"/>
+</map>

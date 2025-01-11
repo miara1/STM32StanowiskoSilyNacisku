@@ -1,4 +1,35 @@
 /* USER CODE BEGIN Header */
+/*!
+ * @mainpage Stanowisko badania czujnikow sily nacisku typu FSR
+ *
+ * Oprogramowanie mikrokontrolera STM32 służy do obsługi stacji laboratoryjnej oraz
+ * dwukierunkowej komunikacji z wykorzystaniem protokołu UART, z dedykowaną aplikacją desktopową.
+ *
+ * Projekt umożliwia prowadzenie badań nad czujnikami siły nacisku typu FSR
+ * (Force Sensitive Resistor), pozwalając na zbieranie danych pomiarowych
+ * do dalszej obróbki i analizy w dedykowanej aplikacji.
+ *
+ * @section wazne-cechy Najważniejsze cechy
+ * 1. Obsługa trzech trybów pomiarowych:
+ *   - **Matrycowe**: Pomiary z wielu kanałów ADC, pozwalające na analizę rozkładu
+ *   obciążenia na matrycy czterech czujników siły nacisku.
+ *   - **Dynamiczne**: Dwa tryby pomiarów dynamicznych:
+ *     * czasowy - rejestracja wyników w określonym przedziale czasowym,
+ *     * bez limitu - pomiary realizowane aż do spełnienia warunku zakończenia pomiaru.
+ *   - **Statyczne**: Pojedyncze pomiary dla wybranego czujnika.
+ * 2. Strukturalna organizacja danych pomiarowych:
+ *   * struktura \c WarunkiPomiaru przechowuje konfigurację parametrów pomiarów,
+ *   * struktura \c DanePomiaroweDynam przechowuje dane pomiarowe oraz historię pomiarów dynamicznych,
+ *   * struktura \c WartosciADC przechowuje aktualne wyniki z przetwornika ADC.
+ * 3. Integracja z aplikacją desktopową:
+ *   - wysyłanie danych pomiarowych w czasie rzeczywistym za pomocą interfejsu UART,
+ *   - zapewnienie integralności przesyłanych danych dzięki wykorzystaniu CRC.
+ * 4. Obsługa przerwań:
+ *   - timerów - sterowanie cyklami pomiarowymi,
+ *   - ADC - obsługa zakończenia konwersji i błędów,
+ *   - UART - odbiór i wysyłanie danych do aplikacji desktopowej.
+ */
+
 /**
   ******************************************************************************
   * @file           : main.c

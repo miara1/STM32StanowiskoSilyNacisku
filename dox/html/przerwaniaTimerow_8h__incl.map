@@ -1,0 +1,32 @@
+<map id="przerwaniaTimerow.h" name="przerwaniaTimerow.h">
+<area shape="rect" id="Node000001" title="Deklaracje funkcji obsługujących przerwania timerów." alt="" coords="171,5,333,31"/>
+<area shape="rect" id="Node000002" href="$adc_8h.html" title="Deklaracje funkcji i struktur związanych z obsługą ADC." alt="" coords="223,79,281,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,31,255,65,249,65,249,31"/>
+<area shape="rect" id="Node000003" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="272,299,339,324"/>
+<area shape="poly" id="edge17_Node000001_Node000003" title=" " alt="" coords="243,33,226,53,213,80,198,107,184,134,182,152,185,176,196,208,217,249,237,273,264,290,261,295,234,277,212,252,191,210,180,177,177,152,179,132,194,104,208,77,222,51,239,29"/>
+<area shape="rect" id="Node000012" href="$crc_8h.html" title="Deklaracje funkcji do obliczania i parsowania CRC." alt="" coords="447,225,500,251"/>
+<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="283,28,322,47,369,73,415,108,454,151,468,181,474,211,469,212,463,183,450,153,411,112,366,77,320,51,281,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,105,236,132,224,169,220,210,222,230,229,249,247,272,270,290,266,294,243,276,224,252,217,232,214,210,219,168,231,130,243,103"/>
+<area shape="rect" id="Node000010" href="$przetworzDane_8h.html" title="Deklaracje struktur i funkcji do przetwarzania danych." alt="" coords="239,225,371,251"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="257,104,280,176,296,212,291,214,275,178,252,105"/>
+<area shape="rect" id="Node000011" href="$komunikacjaUART_8h.html" title="Deklaracje funkcji i struktur do obsługi komunikacji UART." alt="" coords="290,152,441,177"/>
+<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="272,102,337,142,334,147,269,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,445,136,471"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="272,318,213,324,143,335,80,351,57,362,42,374,36,387,38,402,54,433,49,436,33,404,31,386,38,370,54,357,78,346,142,330,212,319,271,312"/>
+<area shape="rect" id="Node000005" href="$globalneZmienne_8h.html" title="Deklaracje uchwytów dla komponentów systemowych STM32." alt="" coords="53,372,201,397"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="278,327,169,369,167,364,276,322"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="225,372,292,397"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="300,326,276,362,272,359,295,323"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="317,372,387,397"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="315,323,339,359,335,362,311,326"/>
+<area shape="rect" id="Node000008" href="$define_8h.html" title="Definicje stałych używanych w projekcie." alt="" coords="412,372,487,397"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="330,322,415,363,412,368,327,326"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="511,372,582,397"/>
+<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="340,320,499,366,497,372,338,325"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="120,399,90,436,86,433,115,396"/>
+<area shape="poly" id="edge11_Node000010_Node000003" title=" " alt="" coords="308,251,308,285,303,285,303,251"/>
+<area shape="poly" id="edge13_Node000011_Node000003" title=" " alt="" coords="375,177,388,211,390,232,385,252,367,276,343,294,340,290,363,272,380,250,385,231,383,212,370,179"/>
+<area shape="poly" id="edge16_Node000011_Node000010" title=" " alt="" coords="357,179,326,217,322,213,353,176"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="384,175,446,215,443,220,381,180"/>
+<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="447,253,346,296,344,291,445,248"/>
+</map>

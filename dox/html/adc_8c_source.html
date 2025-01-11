@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Stanowisko badania czujnikow sily nacisku typu FSR: Plik źródłowy adc.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Stanowisko badania czujnikow sily nacisku typu FSR<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('adc_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">adc.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="adc_8c.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="adc_8h.html">adc.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">   18</a></span><a class="code hl_struct" href="structWartosciADC.html">WartosciADC</a> <a class="code hl_variable" href="adc_8c.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a> = {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        .<a class="code hl_variable" href="structWartosciADC.html#a45bae862673c555abb9dfec89e1b319a">wartosc1</a> = 0,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        .wartosc2 = 0,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        .wartosc3 = 0,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        .wartosc4 = 0,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        .wartosc5 = 0,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        .wartosc6 = 0</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="adc_8h.html#a251b2b87677061134af81bc00ad40c70">   35</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8c.html#a251b2b87677061134af81bc00ad40c70">ADC_Select_CH0</a> (<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    ADC_ChannelConfTypeDef sConfig ={0};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      sConfig.Channel = ADC_CHANNEL_0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      sConfig.Rank = 1;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keywordflow">if</span> (HAL_ADC_ConfigChannel(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, &amp;sConfig) != HAL_OK)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_function" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="adc_8h.html#acb840db66fc6cc2cc8f57bd208fabd0b">   54</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8c.html#acb840db66fc6cc2cc8f57bd208fabd0b">ADC_Select_CH1</a> (<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    ADC_ChannelConfTypeDef sConfig ={0};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      sConfig.Channel = ADC_CHANNEL_1;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      sConfig.Rank = 1;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="keywordflow">if</span> (HAL_ADC_ConfigChannel(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, &amp;sConfig) != HAL_OK)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_function" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="adc_8h.html#a2a25b5ac54f6f42633e4d07a8583aeca">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8c.html#a2a25b5ac54f6f42633e4d07a8583aeca">ADC_Select_CH4</a> (<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    ADC_ChannelConfTypeDef sConfig ={0};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      sConfig.Channel = ADC_CHANNEL_4;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      sConfig.Rank = 1;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <span class="keywordflow">if</span> (HAL_ADC_ConfigChannel(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, &amp;sConfig) != HAL_OK)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <a class="code hl_function" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="adc_8h.html#a98dfc284687b9ac81eb956ee89b6b6b6">   90</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8c.html#a98dfc284687b9ac81eb956ee89b6b6b6">ADC_Select_CH8</a> (<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    ADC_ChannelConfTypeDef sConfig ={0};</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      sConfig.Channel = ADC_CHANNEL_8;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      sConfig.Rank = 1;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keywordflow">if</span> (HAL_ADC_ConfigChannel(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, &amp;sConfig) != HAL_OK)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_function" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="adc_8h.html#aff33c94ce2334041e61de9840a3c1ec0">  108</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8c.html#aff33c94ce2334041e61de9840a3c1ec0">ADC_Select_CH10</a> (<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    ADC_ChannelConfTypeDef sConfig ={0};</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      sConfig.Channel = ADC_CHANNEL_10;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      sConfig.Rank = 1;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      sConfig.SamplingTime = ADC_SAMPLETIME_56CYCLES;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      <span class="keywordflow">if</span> (HAL_ADC_ConfigChannel(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, &amp;sConfig) != HAL_OK)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <a class="code hl_function" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="adc_8h.html#ab2ee4335a727ffed87c6dde821a92437">  126</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8c.html#ab2ee4335a727ffed87c6dde821a92437">ADC_Select_CH11</a> (<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>{</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    ADC_ChannelConfTypeDef sConfig ={0};</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      sConfig.Channel = ADC_CHANNEL_11;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      sConfig.Rank = 1;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      sConfig.SamplingTime = ADC_SAMPLETIME_56CYCLES;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      <span class="keywordflow">if</span> (HAL_ADC_ConfigChannel(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, &amp;sConfig) != HAL_OK)</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <a class="code hl_function" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="adc_8h.html#af20a88180db1113be1e89266917d148b">  144</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8c.html#af20a88180db1113be1e89266917d148b">HAL_ADC_ConvCpltCallback</a>(ADC_HandleTypeDef* hadc)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>{</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">if</span>( (hadc-&gt;Instance == ADC1) &amp;&amp; (<a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a1ff2fecd5208bb0102dd635b767ed604">flagaZmiany</a> == 1) &amp;&amp;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            (<a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a54951e1a83d7ff166af95170ad49c711">idPomiaruDynam</a>[0] == <a class="code hl_define" href="define_8h.html#ad932835db726b12c773bf616a42598af">ID_DYNAM_CZASOWY</a>) )</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <a class="code hl_function" href="komunikacjaUART_8h.html#afd23f4f3b7f09675f4fe6faa95c8d317">sendDataRamkaDynamT</a>(<a class="code hl_variable" href="przetworzDane_8h.html#af715dcb8b4220af3589b3aa761c5d914">danePomiaroweDynam</a>.<a class="code hl_variable" href="structDanePomiaroweDynam.html#a769971b19a39151e4f2e51ff311aa63a">tablicaPomiarowDynamicznych</a>, <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a07f4139f9b7612f163cefa55a6cfaccb">czasPomiaruDynam</a>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        HAL_ADC_Stop_DMA(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">if</span>( (hadc-&gt;Instance == ADC1) &amp;&amp; (<a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a1ff2fecd5208bb0102dd635b767ed604">flagaZmiany</a> == 1) &amp;&amp;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            (<a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a54951e1a83d7ff166af95170ad49c711">idPomiaruDynam</a>[0] == <a class="code hl_define" href="define_8h.html#a57ccd1a712da109f34f4a3b8c0c2b79d">ID_DYNAM_BEZ_LIMITU</a>) )</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>}</div>
+</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="adc_8h.html#adea1a55c5199d5cb4cfc1fdcd32be1b2">  165</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="adc_8c.html#adea1a55c5199d5cb4cfc1fdcd32be1b2">HAL_ADC_ErrorCallback</a>(ADC_HandleTypeDef *hadc) {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    printf(<span class="stringliteral">&quot;ADC DMA Error\n&quot;</span>);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>}</div>
+</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="ttc" id="aadc_8c_html_a251b2b87677061134af81bc00ad40c70"><div class="ttname"><a href="adc_8c.html#a251b2b87677061134af81bc00ad40c70">ADC_Select_CH0</a></div><div class="ttdeci">void ADC_Select_CH0(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 1.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00035">adc.c:35</a></div></div>
+<div class="ttc" id="aadc_8c_html_a2a25b5ac54f6f42633e4d07a8583aeca"><div class="ttname"><a href="adc_8c.html#a2a25b5ac54f6f42633e4d07a8583aeca">ADC_Select_CH4</a></div><div class="ttdeci">void ADC_Select_CH4(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 3.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00072">adc.c:72</a></div></div>
+<div class="ttc" id="aadc_8c_html_a772eaff6e8d4c68d3d316bc765078974"><div class="ttname"><a href="adc_8c.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a></div><div class="ttdeci">WartosciADC wartosciADC</div><div class="ttdoc">Inicjalizacja struktury przechowującej wartości ADC.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00018">adc.c:18</a></div></div>
+<div class="ttc" id="aadc_8c_html_a98dfc284687b9ac81eb956ee89b6b6b6"><div class="ttname"><a href="adc_8c.html#a98dfc284687b9ac81eb956ee89b6b6b6">ADC_Select_CH8</a></div><div class="ttdeci">void ADC_Select_CH8(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 4.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00090">adc.c:90</a></div></div>
+<div class="ttc" id="aadc_8c_html_ab2ee4335a727ffed87c6dde821a92437"><div class="ttname"><a href="adc_8c.html#ab2ee4335a727ffed87c6dde821a92437">ADC_Select_CH11</a></div><div class="ttdeci">void ADC_Select_CH11(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 5.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00126">adc.c:126</a></div></div>
+<div class="ttc" id="aadc_8c_html_acb840db66fc6cc2cc8f57bd208fabd0b"><div class="ttname"><a href="adc_8c.html#acb840db66fc6cc2cc8f57bd208fabd0b">ADC_Select_CH1</a></div><div class="ttdeci">void ADC_Select_CH1(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 2.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00054">adc.c:54</a></div></div>
+<div class="ttc" id="aadc_8c_html_adea1a55c5199d5cb4cfc1fdcd32be1b2"><div class="ttname"><a href="adc_8c.html#adea1a55c5199d5cb4cfc1fdcd32be1b2">HAL_ADC_ErrorCallback</a></div><div class="ttdeci">void HAL_ADC_ErrorCallback(ADC_HandleTypeDef *hadc)</div><div class="ttdoc">Callback obsługujący błąd ADC.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00165">adc.c:165</a></div></div>
+<div class="ttc" id="aadc_8c_html_af20a88180db1113be1e89266917d148b"><div class="ttname"><a href="adc_8c.html#af20a88180db1113be1e89266917d148b">HAL_ADC_ConvCpltCallback</a></div><div class="ttdeci">void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)</div><div class="ttdoc">Callback wywoływany po zakończeniu konwersji ADC.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00144">adc.c:144</a></div></div>
+<div class="ttc" id="aadc_8c_html_aff33c94ce2334041e61de9840a3c1ec0"><div class="ttname"><a href="adc_8c.html#aff33c94ce2334041e61de9840a3c1ec0">ADC_Select_CH10</a></div><div class="ttdeci">void ADC_Select_CH10(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 6.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00108">adc.c:108</a></div></div>
+<div class="ttc" id="aadc_8h_html"><div class="ttname"><a href="adc_8h.html">adc.h</a></div><div class="ttdoc">Deklaracje funkcji i struktur związanych z obsługą ADC.</div></div>
+<div class="ttc" id="adefine_8h_html_a57ccd1a712da109f34f4a3b8c0c2b79d"><div class="ttname"><a href="define_8h.html#a57ccd1a712da109f34f4a3b8c0c2b79d">ID_DYNAM_BEZ_LIMITU</a></div><div class="ttdeci">#define ID_DYNAM_BEZ_LIMITU</div><div class="ttdoc">Identyfikator trybu pomiaru dynamicznego bez ograniczeń.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00070">define.h:70</a></div></div>
+<div class="ttc" id="adefine_8h_html_ad932835db726b12c773bf616a42598af"><div class="ttname"><a href="define_8h.html#ad932835db726b12c773bf616a42598af">ID_DYNAM_CZASOWY</a></div><div class="ttdeci">#define ID_DYNAM_CZASOWY</div><div class="ttdoc">Identyfikator trybu pomiaru dynamicznego ograniczonego czasowo.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00058">define.h:58</a></div></div>
+<div class="ttc" id="aglobalneZmienne_8h_html_a22b804736f5648d52f639b2647d4ed13"><div class="ttname"><a href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a></div><div class="ttdeci">ADC_HandleTypeDef hadc1</div><div class="ttdoc">Uchwyt do przetwornika analogowo-cyfrowego (ADC1).</div><div class="ttdef"><b>Definition</b> <a href="globalneZmienne_8c_source.html#l00015">globalneZmienne.c:15</a></div></div>
+<div class="ttc" id="akomunikacjaUART_8h_html_afd23f4f3b7f09675f4fe6faa95c8d317"><div class="ttname"><a href="komunikacjaUART_8h.html#afd23f4f3b7f09675f4fe6faa95c8d317">sendDataRamkaDynamT</a></div><div class="ttdeci">void sendDataRamkaDynamT(uint32_t *tablicaPomiarowDynamicznych, int czasPomiaruDynam)</div><div class="ttdoc">Funkcja wysyłająca ramkę danych dynamicznych dla pomiaru z ustalonym czasem.</div><div class="ttdef"><b>Definition</b> <a href="komunikacjaUART_8c_source.html#l00070">komunikacjaUART.c:70</a></div></div>
+<div class="ttc" id="amain_8h_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00476">main.c:476</a></div></div>
+<div class="ttc" id="aprzetworzDane_8h_html_a2f2e91c71c7bb06c5b9ee78139f665eb"><div class="ttname"><a href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a></div><div class="ttdeci">WarunkiPomiaru warunkiPomiaru</div><div class="ttdoc">Globalna zmienna przechowująca warunki pomiaru.</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8c_source.html#l00020">przetworzDane.c:20</a></div></div>
+<div class="ttc" id="aprzetworzDane_8h_html_af715dcb8b4220af3589b3aa761c5d914"><div class="ttname"><a href="przetworzDane_8h.html#af715dcb8b4220af3589b3aa761c5d914">danePomiaroweDynam</a></div><div class="ttdeci">DanePomiaroweDynam danePomiaroweDynam</div><div class="ttdoc">Globalna zmienna przechowująca dane pomiarowe dynamiczne.</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8c_source.html#l00040">przetworzDane.c:40</a></div></div>
+<div class="ttc" id="astructDanePomiaroweDynam_html_a769971b19a39151e4f2e51ff311aa63a"><div class="ttname"><a href="structDanePomiaroweDynam.html#a769971b19a39151e4f2e51ff311aa63a">DanePomiaroweDynam::tablicaPomiarowDynamicznych</a></div><div class="ttdeci">uint32_t tablicaPomiarowDynamicznych[MAX_POMIARY]</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00020">przetworzDane.h:20</a></div></div>
+<div class="ttc" id="astructWartosciADC_html"><div class="ttname"><a href="structWartosciADC.html">WartosciADC</a></div><div class="ttdoc">Struktura przechowująca wartości ADC.</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00019">adc.h:20</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_a45bae862673c555abb9dfec89e1b319a"><div class="ttname"><a href="structWartosciADC.html#a45bae862673c555abb9dfec89e1b319a">WartosciADC::wartosc1</a></div><div class="ttdeci">volatile int wartosc1</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00022">adc.h:22</a></div></div>
+<div class="ttc" id="astructWarunkiPomiaru_html_a07f4139f9b7612f163cefa55a6cfaccb"><div class="ttname"><a href="structWarunkiPomiaru.html#a07f4139f9b7612f163cefa55a6cfaccb">WarunkiPomiaru::czasPomiaruDynam</a></div><div class="ttdeci">uint16_t czasPomiaruDynam</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00037">przetworzDane.h:37</a></div></div>
+<div class="ttc" id="astructWarunkiPomiaru_html_a1ff2fecd5208bb0102dd635b767ed604"><div class="ttname"><a href="structWarunkiPomiaru.html#a1ff2fecd5208bb0102dd635b767ed604">WarunkiPomiaru::flagaZmiany</a></div><div class="ttdeci">int flagaZmiany</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00047">przetworzDane.h:47</a></div></div>
+<div class="ttc" id="astructWarunkiPomiaru_html_a54951e1a83d7ff166af95170ad49c711"><div class="ttname"><a href="structWarunkiPomiaru.html#a54951e1a83d7ff166af95170ad49c711">WarunkiPomiaru::idPomiaruDynam</a></div><div class="ttdeci">char idPomiaruDynam[2]</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00033">przetworzDane.h:33</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li><li class="navelem"><a class="el" href="adc_8c.html">adc.c</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

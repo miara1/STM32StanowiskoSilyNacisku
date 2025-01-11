@@ -1,4 +1,4 @@
-../Core/Src/przerwaniaTimerow.c:3:6:HAL_TIM_PeriodElapsedCallback	16	static
-../Core/Src/przerwaniaTimerow.c:32:6:obsluzPrzerwanieMatrycy	128	static
-../Core/Src/przerwaniaTimerow.c:87:6:obsluzPrzerwanieDynam	16	static
-../Core/Src/przerwaniaTimerow.c:163:6:obsluzPrzerwanieStat	120	static
+../Core/Src/przerwaniaTimerow.c:18:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/przerwaniaTimerow.c:56:6:obsluzPrzerwanieMatrycy	128	static
+../Core/Src/przerwaniaTimerow.c:121:6:obsluzPrzerwanieDynam	16	static
+../Core/Src/przerwaniaTimerow.c:208:6:obsluzPrzerwanieStat	120	static

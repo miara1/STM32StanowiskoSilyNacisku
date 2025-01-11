@@ -1,0 +1,24 @@
+<map id="komunikacjaUART.h" name="komunikacjaUART.h">
+<area shape="rect" id="Node000001" title="Deklaracje funkcji i struktur do obsługi komunikacji UART." alt="" coords="230,5,381,31"/>
+<area shape="rect" id="Node000002" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="272,152,339,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="296,32,274,64,268,84,269,103,277,122,289,140,284,142,273,125,264,105,263,83,270,62,292,29"/>
+<area shape="rect" id="Node000009" href="$crc_8h.html" title="Deklaracje funkcji do obliczania i parsowania CRC." alt="" coords="279,79,332,104"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="308,31,308,65,303,65,303,31"/>
+<area shape="rect" id="Node000010" href="$przetworzDane_8h.html" title="Deklaracje struktur i funkcji do przetwarzania danych." alt="" coords="357,79,489,104"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="326,28,393,69,390,74,323,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,299,136,324"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="272,171,213,177,143,188,80,205,57,215,42,227,36,241,38,256,54,286,49,289,33,257,31,240,38,224,54,211,78,200,142,183,212,172,271,166"/>
+<area shape="rect" id="Node000004" href="$globalneZmienne_8h.html" title="Deklaracje uchwytów dla komponentów systemowych STM32." alt="" coords="53,225,201,251"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="278,180,169,223,167,218,276,175"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="225,225,292,251"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="300,179,276,215,272,212,295,176"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="317,225,387,251"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="315,176,339,212,335,215,311,179"/>
+<area shape="rect" id="Node000007" href="$define_8h.html" title="Definicje stałych używanych w projekcie." alt="" coords="412,225,487,251"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="330,175,415,217,412,221,327,180"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="511,225,582,251"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="340,173,499,220,497,225,338,178"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="120,253,90,289,86,286,115,249"/>
+<area shape="poly" id="edge10_Node000009_Node000002" title=" " alt="" coords="308,104,308,138,303,138,303,104"/>
+<area shape="poly" id="edge12_Node000010_Node000002" title=" " alt="" coords="405,106,338,147,335,142,402,102"/>
+</map>

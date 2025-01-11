@@ -1,0 +1,18 @@
+<map id="crc16_ccitt_false" name="crc16_ccitt_false">
+<area shape="rect" id="Node000001" title="Oblicza wartość CRC16 zgodnie ze standardem CCITT FALSE." alt="" coords="525,80,656,105"/>
+<area shape="rect" id="Node000002" href="$przerwaniaTimerow_8c.html#a55f141c74df90b44c4f161444a2f6f47" title="Obsługuje przerwanie związane z pomiarami matrycy." alt="" coords="288,5,477,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="551,76,476,45,439,33,441,28,478,39,553,71"/>
+<area shape="rect" id="Node000004" href="$przerwaniaTimerow_8c.html#ae23d0b35897521ab6952d17a6dc7698f" title="Obsługuje przerwanie związane z pomiarami statycznymi." alt="" coords="301,55,464,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="511,86,464,80,464,75,512,80"/>
+<area shape="rect" id="Node000005" href="$komunikacjaUART_8c.html#ad92317f28b6d12e1e5317d5f6a860b88" title="Funkcja przetwarzająca odebraną ramkę danych." alt="" coords="307,104,459,129"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="512,104,459,111,459,105,511,99"/>
+<area shape="rect" id="Node000007" href="$komunikacjaUART_8c.html#afd23f4f3b7f09675f4fe6faa95c8d317" title="Funkcja wysyłająca ramkę danych dynamicznych dla pomiaru z ustalonym czasem." alt="" coords="291,153,475,179"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="551,114,478,143,437,156,435,151,476,138,549,109"/>
+<area shape="rect" id="Node000003" href="$przerwaniaTimerow_8c.html#a8a3b0ad512a6e6c6157440b68d395eac" title="Callback wywoływany w przypadku wystąpienia przerwania timera." alt="" coords="5,31,240,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,31,241,35,240,29,274,26"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="288,61,240,57,241,52,288,56"/>
+<area shape="rect" id="Node000006" href="$komunikacjaUART_8c.html#ae494a9643f29b87d6d81e5264e60e57b" title="Callback wywoływany po zakończeniu odbioru danych UART." alt="" coords="25,104,221,129"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="293,119,221,119,221,114,293,114"/>
+<area shape="rect" id="Node000008" href="$adc_8c.html#af20a88180db1113be1e89266917d148b" title="Callback wywoływany po zakończeniu konwersji ADC." alt="" coords="20,153,225,179"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="277,169,226,169,226,163,277,163"/>
+</map>

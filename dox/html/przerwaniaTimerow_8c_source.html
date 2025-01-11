@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Stanowisko badania czujnikow sily nacisku typu FSR: Plik źródłowy przerwaniaTimerow.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Stanowisko badania czujnikow sily nacisku typu FSR<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('przerwaniaTimerow_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">przerwaniaTimerow.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="przerwaniaTimerow_8c.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="przerwaniaTimerow_8h.html">przerwaniaTimerow.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="przerwaniaTimerow_8h.html#a8a3b0ad512a6e6c6157440b68d395eac">   18</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="przerwaniaTimerow_8c.html#a8a3b0ad512a6e6c6157440b68d395eac">HAL_TIM_PeriodElapsedCallback</a>(TIM_HandleTypeDef *htim)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span>(htim == &amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a2c80fd5510e2990a59a5c90d745c716c">htim2</a>)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        HAL_TIM_Base_Stop_IT(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#aac3d2c59ee0e3bbae1b99529a154eb62">htim3</a>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        HAL_TIM_Base_Stop_IT(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a85788cec5a97ee377e4ee2e74f026484">htim4</a>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_function" href="przerwaniaTimerow_8c.html#a55f141c74df90b44c4f161444a2f6f47">obsluzPrzerwanieMatrycy</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (htim == &amp;<a class="code hl_variable" href="globalneZmienne_8h.html#aac3d2c59ee0e3bbae1b99529a154eb62">htim3</a>)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        HAL_TIM_Base_Stop_IT(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a2c80fd5510e2990a59a5c90d745c716c">htim2</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        HAL_TIM_Base_Stop_IT(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a85788cec5a97ee377e4ee2e74f026484">htim4</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_function" href="przerwaniaTimerow_8c.html#a7773390a4dcbdbd1931d019e5400b3d5">obsluzPrzerwanieDynam</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (htim == &amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a85788cec5a97ee377e4ee2e74f026484">htim4</a>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        HAL_TIM_Base_Stop_IT(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#aac3d2c59ee0e3bbae1b99529a154eb62">htim3</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        HAL_TIM_Base_Stop_IT(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a2c80fd5510e2990a59a5c90d745c716c">htim2</a>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_function" href="przerwaniaTimerow_8c.html#ae23d0b35897521ab6952d17a6dc7698f">obsluzPrzerwanieStat</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="przerwaniaTimerow_8h.html#a55f141c74df90b44c4f161444a2f6f47">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="przerwaniaTimerow_8c.html#a55f141c74df90b44c4f161444a2f6f47">obsluzPrzerwanieMatrycy</a>()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">static</span> uint8_t licznikDoPomiaruMatrycy = 0;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span>( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a0c7bf999e2cf3d0194c42b08fca4b0ac">idPomiaru</a> == <a class="code hl_define" href="define_8h.html#a35d2c2da85f4a371573b262d140f4fbf">ID_POMIAR_MATRYCY</a> &amp;&amp; <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[0] == <a class="code hl_define" href="define_8h.html#afd3336545b1dc7cb54f1ca68249904ef">ID_CZUJNIK_BRAK</a> )</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">switch</span>(licznikDoPomiaruMatrycy)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_function" href="adc_8h.html#a251b2b87677061134af81bc00ad40c70">ADC_Select_CH0</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            HAL_ADC_Start(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            HAL_ADC_PollForConversion(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, 1000);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a45bae862673c555abb9dfec89e1b319a">wartosc1</a>=HAL_ADC_GetValue(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <a class="code hl_function" href="adc_8h.html#acb840db66fc6cc2cc8f57bd208fabd0b">ADC_Select_CH1</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            HAL_ADC_Start(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            HAL_ADC_PollForConversion(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, 1000);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#ad7cf8fb44028658579ae16c39407c283">wartosc2</a>=HAL_ADC_GetValue(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_function" href="adc_8h.html#a2a25b5ac54f6f42633e4d07a8583aeca">ADC_Select_CH4</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            HAL_ADC_Start(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            HAL_ADC_PollForConversion(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, 1000);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#acd318ce44ffa4c53a30747e099296b2e">wartosc3</a>=HAL_ADC_GetValue(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <a class="code hl_function" href="adc_8h.html#a98dfc284687b9ac81eb956ee89b6b6b6">ADC_Select_CH8</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            HAL_ADC_Start(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            HAL_ADC_PollForConversion(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, 1000);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a47e0f23e8d479b7ce3cfd61a365f3450">wartosc4</a>=HAL_ADC_GetValue(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="comment">// Wyslij raz na 4 przerwania zegara</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordtype">char</span> dane[100];</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            sprintf(dane, <span class="stringliteral">&quot;P M C1 %d C2 %d C3 %d C4 %d&quot;</span>, <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a45bae862673c555abb9dfec89e1b319a">wartosc1</a>, <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#ad7cf8fb44028658579ae16c39407c283">wartosc2</a>,</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                    <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#acd318ce44ffa4c53a30747e099296b2e">wartosc3</a>, <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a47e0f23e8d479b7ce3cfd61a365f3450">wartosc4</a> );</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordtype">int</span> crc16=<a class="code hl_function" href="crc_8h.html#a8fca00596c1e6a7e22df92fc52d620ec">crc16_ccitt_false</a>(dane, strlen(dane));</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            printf( <span class="stringliteral">&quot;%s %0*d\r\n&quot;</span>, dane, 5, crc16);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        licznikDoPomiaruMatrycy = (licznikDoPomiaruMatrycy + 1) %4;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="przerwaniaTimerow_8h.html#a7773390a4dcbdbd1931d019e5400b3d5">  121</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="przerwaniaTimerow_8c.html#a7773390a4dcbdbd1931d019e5400b3d5">obsluzPrzerwanieDynam</a>()</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">int</span> tempValPom = 0;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">if</span> ( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[1] == <a class="code hl_define" href="define_8h.html#ab425f6c491d45eabeaa46a0e062ed2ff">ID_CZUJNIK_CP_150</a> )</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <a class="code hl_function" href="adc_8h.html#ab2ee4335a727ffed87c6dde821a92437">ADC_Select_CH11</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        HAL_ADC_Start(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        HAL_ADC_PollForConversion(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, 1000);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a2d2e2984354c1d7602f9e855aaa5aeab">wartosc5</a>=HAL_ADC_GetValue(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        tempValPom = <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a2d2e2984354c1d7602f9e855aaa5aeab">wartosc5</a>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[1] == <a class="code hl_define" href="define_8h.html#acbeafea5644663811ef2aed90d2739ec">ID_CZUJNIK_CP_154</a> ) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <a class="code hl_function" href="adc_8h.html#aff33c94ce2334041e61de9840a3c1ec0">ADC_Select_CH10</a>();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        HAL_ADC_Start(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        HAL_ADC_PollForConversion(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, 1000);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a95ff62dadb9a68a308200bdb47badee1">wartosc6</a>=HAL_ADC_GetValue(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        tempValPom = <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a95ff62dadb9a68a308200bdb47badee1">wartosc6</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordflow">if</span> ( !<a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a1ff2fecd5208bb0102dd635b767ed604">flagaZmiany</a>)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <a class="code hl_variable" href="przetworzDane_8h.html#af715dcb8b4220af3589b3aa761c5d914">danePomiaroweDynam</a>.<a class="code hl_variable" href="structDanePomiaroweDynam.html#a2de333e6abd1b82321670881ee4535fd">tablicaHistoriiPrzedPomiarem</a>[<a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a449db8aaf6bb22aad628e9441f34bc00">indeksHistorii</a>] = tempValPom;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a449db8aaf6bb22aad628e9441f34bc00">indeksHistorii</a> = (<a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a449db8aaf6bb22aad628e9441f34bc00">indeksHistorii</a> + 1) % <a class="code hl_define" href="define_8h.html#aca1cf2fac66a81502ec2955e54979b08">ROZM_HISTORIA</a>;  <span class="comment">// Przejście na kolejny indeks cyklicznie</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">if</span> (( (<a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a95ff62dadb9a68a308200bdb47badee1">wartosc6</a> &gt; <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#af896f6fe50a430cf2b6872e9277342e0">progPomiaruDynam</a>) &amp;&amp; <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[1] == <a class="code hl_define" href="define_8h.html#acbeafea5644663811ef2aed90d2739ec">ID_CZUJNIK_CP_154</a>) ||</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            ( (<a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a2d2e2984354c1d7602f9e855aaa5aeab">wartosc5</a> &gt; <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#af896f6fe50a430cf2b6872e9277342e0">progPomiaruDynam</a>) &amp;&amp; <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[1] == <a class="code hl_define" href="define_8h.html#ab425f6c491d45eabeaa46a0e062ed2ff">ID_CZUJNIK_CP_150</a>))</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a54951e1a83d7ff166af95170ad49c711">idPomiaruDynam</a>[0] == <a class="code hl_define" href="define_8h.html#ad932835db726b12c773bf616a42598af">ID_DYNAM_CZASOWY</a> )</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <span class="comment">// Sprawdzenie, czy zmieniło się z &lt;30 na &gt;30</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a1ff2fecd5208bb0102dd635b767ed604">flagaZmiany</a>)</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                <span class="keywordflow">if</span>( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[1] == <a class="code hl_define" href="define_8h.html#ab425f6c491d45eabeaa46a0e062ed2ff">ID_CZUJNIK_CP_150</a>)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                    printf(<span class="stringliteral">&quot;T oraz 5&quot;</span>);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                    <span class="comment">//printf(&quot;ZaczynamDynamT!!!\r\n&quot;);</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                    HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                    <a class="code hl_function" href="adc_8h.html#ab2ee4335a727ffed87c6dde821a92437">ADC_Select_CH11</a>();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                    HAL_ADC_Start_DMA(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, (uint32_t*)<a class="code hl_variable" href="przetworzDane_8h.html#af715dcb8b4220af3589b3aa761c5d914">danePomiaroweDynam</a>.<a class="code hl_variable" href="structDanePomiaroweDynam.html#a769971b19a39151e4f2e51ff311aa63a">tablicaPomiarowDynamicznych</a>, <a class="code hl_define" href="define_8h.html#a79889ed807bc9d4987554ae64919e383">MAX_POMIARY</a>);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                    <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a1ff2fecd5208bb0102dd635b767ed604">flagaZmiany</a> = 1;  <span class="comment">// Ustawienie flagi zmiany</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[1] == <a class="code hl_define" href="define_8h.html#acbeafea5644663811ef2aed90d2739ec">ID_CZUJNIK_CP_154</a> ) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                    <a class="code hl_function" href="adc_8h.html#aff33c94ce2334041e61de9840a3c1ec0">ADC_Select_CH10</a>();</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    HAL_ADC_Start_DMA(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, (uint32_t*)<a class="code hl_variable" href="przetworzDane_8h.html#af715dcb8b4220af3589b3aa761c5d914">danePomiaroweDynam</a>.<a class="code hl_variable" href="structDanePomiaroweDynam.html#a769971b19a39151e4f2e51ff311aa63a">tablicaPomiarowDynamicznych</a>, <a class="code hl_define" href="define_8h.html#a79889ed807bc9d4987554ae64919e383">MAX_POMIARY</a>);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                    <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a1ff2fecd5208bb0102dd635b767ed604">flagaZmiany</a> = 1;  <span class="comment">// Ustawienie flagi zmiany</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a54951e1a83d7ff166af95170ad49c711">idPomiaruDynam</a>[0] == <a class="code hl_define" href="define_8h.html#a57ccd1a712da109f34f4a3b8c0c2b79d">ID_DYNAM_BEZ_LIMITU</a> ) {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">if</span>(!<a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a1ff2fecd5208bb0102dd635b767ed604">flagaZmiany</a>)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <span class="keywordflow">if</span>( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[1] == <a class="code hl_define" href="define_8h.html#ab425f6c491d45eabeaa46a0e062ed2ff">ID_CZUJNIK_CP_150</a> )</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                    <span class="comment">//                      HAL_ADC_Start_DMA(hadc, dma_buff, iloscPunktowDoSredniej);</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                    <span class="comment">//                      flagaZmiany = 1;</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[1] == <a class="code hl_define" href="define_8h.html#acbeafea5644663811ef2aed90d2739ec">ID_CZUJNIK_CP_154</a> )</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                    printf(<span class="stringliteral">&quot;D C6 oraz X\r\n&quot;</span>);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
+</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="foldopen" id="foldopen00208" data-start="{" data-end="}">
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="przerwaniaTimerow_8h.html#ae23d0b35897521ab6952d17a6dc7698f">  208</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="przerwaniaTimerow_8c.html#ae23d0b35897521ab6952d17a6dc7698f">obsluzPrzerwanieStat</a>()</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>{</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordflow">if</span>( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a0c7bf999e2cf3d0194c42b08fca4b0ac">idPomiaru</a> == <a class="code hl_define" href="define_8h.html#af6e12a5f0a51c2bc893b5fb7f14c26d8">ID_POMIAR_STAT</a> )</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[1] == <a class="code hl_define" href="define_8h.html#ab425f6c491d45eabeaa46a0e062ed2ff">ID_CZUJNIK_CP_150</a> )</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>              HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>              <a class="code hl_function" href="adc_8h.html#ab2ee4335a727ffed87c6dde821a92437">ADC_Select_CH11</a>();</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>              HAL_ADC_Start(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>              HAL_ADC_PollForConversion(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, 1000);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>              <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a2d2e2984354c1d7602f9e855aaa5aeab">wartosc5</a>=HAL_ADC_GetValue(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>              <span class="keywordtype">char</span> dane[100];</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>              sprintf(dane, <span class="stringliteral">&quot;P S C5 %d&quot;</span>, <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a2d2e2984354c1d7602f9e855aaa5aeab">wartosc5</a>);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>              <span class="keywordtype">int</span> crc16=<a class="code hl_function" href="crc_8h.html#a8fca00596c1e6a7e22df92fc52d620ec">crc16_ccitt_false</a>(dane, strlen(dane));</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>              printf( <span class="stringliteral">&quot;%s %0*d\r\n&quot;</span>, dane, 5, crc16);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a>.<a class="code hl_variable" href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">idCzujnika</a>[1] == <a class="code hl_define" href="define_8h.html#acbeafea5644663811ef2aed90d2739ec">ID_CZUJNIK_CP_154</a> )</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>              HAL_ADC_Stop(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>              <a class="code hl_function" href="adc_8h.html#aff33c94ce2334041e61de9840a3c1ec0">ADC_Select_CH10</a>();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>              HAL_ADC_Start(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>              HAL_ADC_PollForConversion(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, 1000);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>              <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a95ff62dadb9a68a308200bdb47badee1">wartosc6</a>=HAL_ADC_GetValue(&amp;<a class="code hl_variable" href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>              <span class="keywordtype">char</span> dane[100];</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>              sprintf(dane, <span class="stringliteral">&quot;P S C6 %d&quot;</span>, <a class="code hl_variable" href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a>.<a class="code hl_variable" href="structWartosciADC.html#a95ff62dadb9a68a308200bdb47badee1">wartosc6</a>);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>              <span class="keywordtype">int</span> crc16=<a class="code hl_function" href="crc_8h.html#a8fca00596c1e6a7e22df92fc52d620ec">crc16_ccitt_false</a>(dane, strlen(dane));</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>              printf( <span class="stringliteral">&quot;%s %0*d\r\n&quot;</span>, dane, 5, crc16);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    }</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>}</div>
+</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="ttc" id="aadc_8h_html_a251b2b87677061134af81bc00ad40c70"><div class="ttname"><a href="adc_8h.html#a251b2b87677061134af81bc00ad40c70">ADC_Select_CH0</a></div><div class="ttdeci">void ADC_Select_CH0(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 1.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00035">adc.c:35</a></div></div>
+<div class="ttc" id="aadc_8h_html_a2a25b5ac54f6f42633e4d07a8583aeca"><div class="ttname"><a href="adc_8h.html#a2a25b5ac54f6f42633e4d07a8583aeca">ADC_Select_CH4</a></div><div class="ttdeci">void ADC_Select_CH4(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 3.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00072">adc.c:72</a></div></div>
+<div class="ttc" id="aadc_8h_html_a772eaff6e8d4c68d3d316bc765078974"><div class="ttname"><a href="adc_8h.html#a772eaff6e8d4c68d3d316bc765078974">wartosciADC</a></div><div class="ttdeci">WartosciADC wartosciADC</div><div class="ttdoc">Struktura przechowująca wartości odczytane z kanałów ADC.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00018">adc.c:18</a></div></div>
+<div class="ttc" id="aadc_8h_html_a98dfc284687b9ac81eb956ee89b6b6b6"><div class="ttname"><a href="adc_8h.html#a98dfc284687b9ac81eb956ee89b6b6b6">ADC_Select_CH8</a></div><div class="ttdeci">void ADC_Select_CH8(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 4.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00090">adc.c:90</a></div></div>
+<div class="ttc" id="aadc_8h_html_ab2ee4335a727ffed87c6dde821a92437"><div class="ttname"><a href="adc_8h.html#ab2ee4335a727ffed87c6dde821a92437">ADC_Select_CH11</a></div><div class="ttdeci">void ADC_Select_CH11(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 5.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00126">adc.c:126</a></div></div>
+<div class="ttc" id="aadc_8h_html_acb840db66fc6cc2cc8f57bd208fabd0b"><div class="ttname"><a href="adc_8h.html#acb840db66fc6cc2cc8f57bd208fabd0b">ADC_Select_CH1</a></div><div class="ttdeci">void ADC_Select_CH1(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 2.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00054">adc.c:54</a></div></div>
+<div class="ttc" id="aadc_8h_html_aff33c94ce2334041e61de9840a3c1ec0"><div class="ttname"><a href="adc_8h.html#aff33c94ce2334041e61de9840a3c1ec0">ADC_Select_CH10</a></div><div class="ttdeci">void ADC_Select_CH10(void)</div><div class="ttdoc">Funkcja wybierająca kanał ADC do pomiarów z czujnika 6.</div><div class="ttdef"><b>Definition</b> <a href="adc_8c_source.html#l00108">adc.c:108</a></div></div>
+<div class="ttc" id="acrc_8h_html_a8fca00596c1e6a7e22df92fc52d620ec"><div class="ttname"><a href="crc_8h.html#a8fca00596c1e6a7e22df92fc52d620ec">crc16_ccitt_false</a></div><div class="ttdeci">uint16_t crc16_ccitt_false(const char *pData, int length)</div><div class="ttdoc">Oblicza wartość CRC16 zgodnie ze standardem CCITT FALSE.</div><div class="ttdef"><b>Definition</b> <a href="crc_8c_source.html#l00018">crc.c:18</a></div></div>
+<div class="ttc" id="adefine_8h_html_a35d2c2da85f4a371573b262d140f4fbf"><div class="ttname"><a href="define_8h.html#a35d2c2da85f4a371573b262d140f4fbf">ID_POMIAR_MATRYCY</a></div><div class="ttdeci">#define ID_POMIAR_MATRYCY</div><div class="ttdoc">Identyfikator pomiaru matrycy.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00040">define.h:40</a></div></div>
+<div class="ttc" id="adefine_8h_html_a57ccd1a712da109f34f4a3b8c0c2b79d"><div class="ttname"><a href="define_8h.html#a57ccd1a712da109f34f4a3b8c0c2b79d">ID_DYNAM_BEZ_LIMITU</a></div><div class="ttdeci">#define ID_DYNAM_BEZ_LIMITU</div><div class="ttdoc">Identyfikator trybu pomiaru dynamicznego bez ograniczeń.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00070">define.h:70</a></div></div>
+<div class="ttc" id="adefine_8h_html_a79889ed807bc9d4987554ae64919e383"><div class="ttname"><a href="define_8h.html#a79889ed807bc9d4987554ae64919e383">MAX_POMIARY</a></div><div class="ttdeci">#define MAX_POMIARY</div><div class="ttdoc">Maksymalna liczba pomiarów do składowania w tablicy.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00016">define.h:16</a></div></div>
+<div class="ttc" id="adefine_8h_html_ab425f6c491d45eabeaa46a0e062ed2ff"><div class="ttname"><a href="define_8h.html#ab425f6c491d45eabeaa46a0e062ed2ff">ID_CZUJNIK_CP_150</a></div><div class="ttdeci">#define ID_CZUJNIK_CP_150</div><div class="ttdoc">Identyfikator czujnika CP-150.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00088">define.h:88</a></div></div>
+<div class="ttc" id="adefine_8h_html_aca1cf2fac66a81502ec2955e54979b08"><div class="ttname"><a href="define_8h.html#aca1cf2fac66a81502ec2955e54979b08">ROZM_HISTORIA</a></div><div class="ttdeci">#define ROZM_HISTORIA</div><div class="ttdoc">Liczba zapisów w buforze historii pomiarów dla pomiarów dynamicznych.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00034">define.h:34</a></div></div>
+<div class="ttc" id="adefine_8h_html_acbeafea5644663811ef2aed90d2739ec"><div class="ttname"><a href="define_8h.html#acbeafea5644663811ef2aed90d2739ec">ID_CZUJNIK_CP_154</a></div><div class="ttdeci">#define ID_CZUJNIK_CP_154</div><div class="ttdoc">Identyfikator czujnika CP-154.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00094">define.h:94</a></div></div>
+<div class="ttc" id="adefine_8h_html_ad932835db726b12c773bf616a42598af"><div class="ttname"><a href="define_8h.html#ad932835db726b12c773bf616a42598af">ID_DYNAM_CZASOWY</a></div><div class="ttdeci">#define ID_DYNAM_CZASOWY</div><div class="ttdoc">Identyfikator trybu pomiaru dynamicznego ograniczonego czasowo.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00058">define.h:58</a></div></div>
+<div class="ttc" id="adefine_8h_html_af6e12a5f0a51c2bc893b5fb7f14c26d8"><div class="ttname"><a href="define_8h.html#af6e12a5f0a51c2bc893b5fb7f14c26d8">ID_POMIAR_STAT</a></div><div class="ttdeci">#define ID_POMIAR_STAT</div><div class="ttdoc">Identyfikator pomiaru statycznego.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00052">define.h:52</a></div></div>
+<div class="ttc" id="adefine_8h_html_afd3336545b1dc7cb54f1ca68249904ef"><div class="ttname"><a href="define_8h.html#afd3336545b1dc7cb54f1ca68249904ef">ID_CZUJNIK_BRAK</a></div><div class="ttdeci">#define ID_CZUJNIK_BRAK</div><div class="ttdoc">Identyfikator braku sprecyzowanego czujnika w ramce z aplikacji.</div><div class="ttdef"><b>Definition</b> <a href="define_8h_source.html#l00100">define.h:100</a></div></div>
+<div class="ttc" id="aglobalneZmienne_8h_html_a22b804736f5648d52f639b2647d4ed13"><div class="ttname"><a href="globalneZmienne_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a></div><div class="ttdeci">ADC_HandleTypeDef hadc1</div><div class="ttdoc">Uchwyt do przetwornika analogowo-cyfrowego (ADC1).</div><div class="ttdef"><b>Definition</b> <a href="globalneZmienne_8c_source.html#l00015">globalneZmienne.c:15</a></div></div>
+<div class="ttc" id="aglobalneZmienne_8h_html_a2c80fd5510e2990a59a5c90d745c716c"><div class="ttname"><a href="globalneZmienne_8h.html#a2c80fd5510e2990a59a5c90d745c716c">htim2</a></div><div class="ttdeci">TIM_HandleTypeDef htim2</div><div class="ttdoc">Uchwyt do timera 2.</div><div class="ttdef"><b>Definition</b> <a href="globalneZmienne_8c_source.html#l00025">globalneZmienne.c:25</a></div></div>
+<div class="ttc" id="aglobalneZmienne_8h_html_a85788cec5a97ee377e4ee2e74f026484"><div class="ttname"><a href="globalneZmienne_8h.html#a85788cec5a97ee377e4ee2e74f026484">htim4</a></div><div class="ttdeci">TIM_HandleTypeDef htim4</div><div class="ttdoc">Uchwyt do timera 4.</div><div class="ttdef"><b>Definition</b> <a href="globalneZmienne_8c_source.html#l00035">globalneZmienne.c:35</a></div></div>
+<div class="ttc" id="aglobalneZmienne_8h_html_aac3d2c59ee0e3bbae1b99529a154eb62"><div class="ttname"><a href="globalneZmienne_8h.html#aac3d2c59ee0e3bbae1b99529a154eb62">htim3</a></div><div class="ttdeci">TIM_HandleTypeDef htim3</div><div class="ttdoc">Uchwyt do timera 3.</div><div class="ttdef"><b>Definition</b> <a href="globalneZmienne_8c_source.html#l00030">globalneZmienne.c:30</a></div></div>
+<div class="ttc" id="aprzerwaniaTimerow_8c_html_a55f141c74df90b44c4f161444a2f6f47"><div class="ttname"><a href="przerwaniaTimerow_8c.html#a55f141c74df90b44c4f161444a2f6f47">obsluzPrzerwanieMatrycy</a></div><div class="ttdeci">void obsluzPrzerwanieMatrycy()</div><div class="ttdoc">Obsługuje przerwanie związane z pomiarami matrycy.</div><div class="ttdef"><b>Definition</b> <a href="przerwaniaTimerow_8c_source.html#l00056">przerwaniaTimerow.c:56</a></div></div>
+<div class="ttc" id="aprzerwaniaTimerow_8c_html_a7773390a4dcbdbd1931d019e5400b3d5"><div class="ttname"><a href="przerwaniaTimerow_8c.html#a7773390a4dcbdbd1931d019e5400b3d5">obsluzPrzerwanieDynam</a></div><div class="ttdeci">void obsluzPrzerwanieDynam()</div><div class="ttdoc">Obsługuje przerwanie związane z pomiarami dynamicznymi.</div><div class="ttdef"><b>Definition</b> <a href="przerwaniaTimerow_8c_source.html#l00121">przerwaniaTimerow.c:121</a></div></div>
+<div class="ttc" id="aprzerwaniaTimerow_8c_html_a8a3b0ad512a6e6c6157440b68d395eac"><div class="ttname"><a href="przerwaniaTimerow_8c.html#a8a3b0ad512a6e6c6157440b68d395eac">HAL_TIM_PeriodElapsedCallback</a></div><div class="ttdeci">void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)</div><div class="ttdoc">Callback wywoływany w przypadku wystąpienia przerwania timera.</div><div class="ttdef"><b>Definition</b> <a href="przerwaniaTimerow_8c_source.html#l00018">przerwaniaTimerow.c:18</a></div></div>
+<div class="ttc" id="aprzerwaniaTimerow_8c_html_ae23d0b35897521ab6952d17a6dc7698f"><div class="ttname"><a href="przerwaniaTimerow_8c.html#ae23d0b35897521ab6952d17a6dc7698f">obsluzPrzerwanieStat</a></div><div class="ttdeci">void obsluzPrzerwanieStat()</div><div class="ttdoc">Obsługuje przerwanie związane z pomiarami statycznymi.</div><div class="ttdef"><b>Definition</b> <a href="przerwaniaTimerow_8c_source.html#l00208">przerwaniaTimerow.c:208</a></div></div>
+<div class="ttc" id="aprzerwaniaTimerow_8h_html"><div class="ttname"><a href="przerwaniaTimerow_8h.html">przerwaniaTimerow.h</a></div><div class="ttdoc">Deklaracje funkcji obsługujących przerwania timerów.</div></div>
+<div class="ttc" id="aprzetworzDane_8h_html_a2f2e91c71c7bb06c5b9ee78139f665eb"><div class="ttname"><a href="przetworzDane_8h.html#a2f2e91c71c7bb06c5b9ee78139f665eb">warunkiPomiaru</a></div><div class="ttdeci">WarunkiPomiaru warunkiPomiaru</div><div class="ttdoc">Globalna zmienna przechowująca warunki pomiaru.</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8c_source.html#l00020">przetworzDane.c:20</a></div></div>
+<div class="ttc" id="aprzetworzDane_8h_html_af715dcb8b4220af3589b3aa761c5d914"><div class="ttname"><a href="przetworzDane_8h.html#af715dcb8b4220af3589b3aa761c5d914">danePomiaroweDynam</a></div><div class="ttdeci">DanePomiaroweDynam danePomiaroweDynam</div><div class="ttdoc">Globalna zmienna przechowująca dane pomiarowe dynamiczne.</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8c_source.html#l00040">przetworzDane.c:40</a></div></div>
+<div class="ttc" id="astructDanePomiaroweDynam_html_a2de333e6abd1b82321670881ee4535fd"><div class="ttname"><a href="structDanePomiaroweDynam.html#a2de333e6abd1b82321670881ee4535fd">DanePomiaroweDynam::tablicaHistoriiPrzedPomiarem</a></div><div class="ttdeci">uint32_t tablicaHistoriiPrzedPomiarem[ROZM_HISTORIA]</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00022">przetworzDane.h:22</a></div></div>
+<div class="ttc" id="astructDanePomiaroweDynam_html_a769971b19a39151e4f2e51ff311aa63a"><div class="ttname"><a href="structDanePomiaroweDynam.html#a769971b19a39151e4f2e51ff311aa63a">DanePomiaroweDynam::tablicaPomiarowDynamicznych</a></div><div class="ttdeci">uint32_t tablicaPomiarowDynamicznych[MAX_POMIARY]</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00020">przetworzDane.h:20</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_a2d2e2984354c1d7602f9e855aaa5aeab"><div class="ttname"><a href="structWartosciADC.html#a2d2e2984354c1d7602f9e855aaa5aeab">WartosciADC::wartosc5</a></div><div class="ttdeci">volatile int wartosc5</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00030">adc.h:30</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_a45bae862673c555abb9dfec89e1b319a"><div class="ttname"><a href="structWartosciADC.html#a45bae862673c555abb9dfec89e1b319a">WartosciADC::wartosc1</a></div><div class="ttdeci">volatile int wartosc1</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00022">adc.h:22</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_a47e0f23e8d479b7ce3cfd61a365f3450"><div class="ttname"><a href="structWartosciADC.html#a47e0f23e8d479b7ce3cfd61a365f3450">WartosciADC::wartosc4</a></div><div class="ttdeci">volatile int wartosc4</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00028">adc.h:28</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_a95ff62dadb9a68a308200bdb47badee1"><div class="ttname"><a href="structWartosciADC.html#a95ff62dadb9a68a308200bdb47badee1">WartosciADC::wartosc6</a></div><div class="ttdeci">volatile int wartosc6</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00032">adc.h:32</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_acd318ce44ffa4c53a30747e099296b2e"><div class="ttname"><a href="structWartosciADC.html#acd318ce44ffa4c53a30747e099296b2e">WartosciADC::wartosc3</a></div><div class="ttdeci">volatile int wartosc3</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00026">adc.h:26</a></div></div>
+<div class="ttc" id="astructWartosciADC_html_ad7cf8fb44028658579ae16c39407c283"><div class="ttname"><a href="structWartosciADC.html#ad7cf8fb44028658579ae16c39407c283">WartosciADC::wartosc2</a></div><div class="ttdeci">volatile int wartosc2</div><div class="ttdef"><b>Definition</b> <a href="adc_8h_source.html#l00024">adc.h:24</a></div></div>
+<div class="ttc" id="astructWarunkiPomiaru_html_a0c7bf999e2cf3d0194c42b08fca4b0ac"><div class="ttname"><a href="structWarunkiPomiaru.html#a0c7bf999e2cf3d0194c42b08fca4b0ac">WarunkiPomiaru::idPomiaru</a></div><div class="ttdeci">char idPomiaru</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00035">przetworzDane.h:35</a></div></div>
+<div class="ttc" id="astructWarunkiPomiaru_html_a1ff2fecd5208bb0102dd635b767ed604"><div class="ttname"><a href="structWarunkiPomiaru.html#a1ff2fecd5208bb0102dd635b767ed604">WarunkiPomiaru::flagaZmiany</a></div><div class="ttdeci">int flagaZmiany</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00047">przetworzDane.h:47</a></div></div>
+<div class="ttc" id="astructWarunkiPomiaru_html_a2ddc45dfe1a26b843cc1bd339ea09062"><div class="ttname"><a href="structWarunkiPomiaru.html#a2ddc45dfe1a26b843cc1bd339ea09062">WarunkiPomiaru::idCzujnika</a></div><div class="ttdeci">char idCzujnika[3]</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00031">przetworzDane.h:31</a></div></div>
+<div class="ttc" id="astructWarunkiPomiaru_html_a449db8aaf6bb22aad628e9441f34bc00"><div class="ttname"><a href="structWarunkiPomiaru.html#a449db8aaf6bb22aad628e9441f34bc00">WarunkiPomiaru::indeksHistorii</a></div><div class="ttdeci">uint16_t indeksHistorii</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00045">przetworzDane.h:45</a></div></div>
+<div class="ttc" id="astructWarunkiPomiaru_html_a54951e1a83d7ff166af95170ad49c711"><div class="ttname"><a href="structWarunkiPomiaru.html#a54951e1a83d7ff166af95170ad49c711">WarunkiPomiaru::idPomiaruDynam</a></div><div class="ttdeci">char idPomiaruDynam[2]</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00033">przetworzDane.h:33</a></div></div>
+<div class="ttc" id="astructWarunkiPomiaru_html_af896f6fe50a430cf2b6872e9277342e0"><div class="ttname"><a href="structWarunkiPomiaru.html#af896f6fe50a430cf2b6872e9277342e0">WarunkiPomiaru::progPomiaruDynam</a></div><div class="ttdeci">uint16_t progPomiaruDynam</div><div class="ttdef"><b>Definition</b> <a href="przetworzDane_8h_source.html#l00039">przetworzDane.h:39</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li><li class="navelem"><a class="el" href="przerwaniaTimerow_8c.html">przerwaniaTimerow.c</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

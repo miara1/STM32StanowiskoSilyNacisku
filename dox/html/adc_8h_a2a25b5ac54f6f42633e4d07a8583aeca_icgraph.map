@@ -1,0 +1,7 @@
+<map id="ADC_Select_CH4" name="ADC_Select_CH4">
+<area shape="rect" id="Node000001" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 3." alt="" coords="525,5,656,31"/>
+<area shape="rect" id="Node000002" href="$przerwaniaTimerow_8c.html#a55f141c74df90b44c4f161444a2f6f47" title="Obsługuje przerwanie związane z pomiarami matrycy." alt="" coords="288,5,477,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="512,21,478,21,478,15,512,15"/>
+<area shape="rect" id="Node000003" href="$przerwaniaTimerow_8c.html#a8a3b0ad512a6e6c6157440b68d395eac" title="Callback wywoływany w przypadku wystąpienia przerwania timera." alt="" coords="5,5,240,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,21,240,21,240,15,274,15"/>
+</map>

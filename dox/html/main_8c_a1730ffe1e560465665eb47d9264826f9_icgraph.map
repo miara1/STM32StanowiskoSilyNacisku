@@ -1,0 +1,36 @@
+<map id="Error_Handler" name="Error_Handler">
+<area shape="rect" id="Node000001" title="This function is executed in case of error occurrence." alt="" coords="728,179,839,204"/>
+<area shape="rect" id="Node000002" href="$adc_8c.html#a251b2b87677061134af81bc00ad40c70" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 1." alt="" coords="537,104,668,129"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="746,175,679,143,647,132,649,127,681,138,748,170"/>
+<area shape="rect" id="Node000005" href="$adc_8c.html#acb840db66fc6cc2cc8f57bd208fabd0b" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 2." alt="" coords="537,153,668,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="714,184,668,178,668,172,714,179"/>
+<area shape="rect" id="Node000006" href="$adc_8c.html#aff33c94ce2334041e61de9840a3c1ec0" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 6." alt="" coords="533,5,672,31"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="769,168,734,105,709,72,678,44,658,33,661,28,682,40,713,69,739,103,774,165"/>
+<area shape="rect" id="Node000009" href="$adc_8c.html#ab2ee4335a727ffed87c6dde821a92437" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 5." alt="" coords="533,55,672,80"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="762,170,726,131,679,94,655,82,657,78,681,89,729,127,766,166"/>
+<area shape="rect" id="Node000010" href="$adc_8c.html#a2a25b5ac54f6f42633e4d07a8583aeca" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 3." alt="" coords="537,203,668,228"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="714,203,668,209,668,204,714,198"/>
+<area shape="rect" id="Node000011" href="$adc_8c.html#a98dfc284687b9ac81eb956ee89b6b6b6" title="Funkcja wybierająca kanał ADC do pomiarów z czujnika 4." alt="" coords="537,252,668,277"/>
+<area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="746,213,681,242,646,254,644,249,679,237,744,208"/>
+<area shape="rect" id="Node000012" href="$stm32f4xx__hal__msp_8c.html#aa30863492d5c3103e3e8ce8a63dadd07" title="ADC MSP Initialization This function configures the hardware resources used in this example." alt="" coords="533,301,672,327"/>
+<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="765,217,728,255,681,291,654,304,652,299,679,286,725,251,761,213"/>
+<area shape="rect" id="Node000013" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="525,351,680,376"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="773,218,738,280,713,313,682,341,661,353,658,348,678,337,709,309,734,277,769,215"/>
+<area shape="rect" id="Node000003" href="$przerwaniaTimerow_8c.html#a55f141c74df90b44c4f161444a2f6f47" title="Obsługuje przerwanie związane z pomiarami matrycy." alt="" coords="288,153,477,179"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="533,135,441,156,440,151,531,130"/>
+<area shape="rect" id="Node000004" href="$przerwaniaTimerow_8c.html#a8a3b0ad512a6e6c6157440b68d395eac" title="Callback wywoływany w przypadku wystąpienia przerwania timera." alt="" coords="5,55,240,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="334,151,156,83,158,78,336,146"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="524,169,477,169,477,163,524,163"/>
+<area shape="rect" id="Node000007" href="$przerwaniaTimerow_8c.html#a7773390a4dcbdbd1931d019e5400b3d5" title="Obsługuje przerwanie związane z pomiarami dynamicznymi." alt="" coords="291,5,474,31"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="520,21,474,21,474,15,520,15"/>
+<area shape="rect" id="Node000008" href="$przerwaniaTimerow_8c.html#ae23d0b35897521ab6952d17a6dc7698f" title="Obsługuje przerwanie związane z pomiarami statycznymi." alt="" coords="301,55,464,80"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="533,36,441,57,440,52,531,31"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="302,36,191,57,190,52,301,31"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="288,70,240,70,240,65,288,65"/>
+<area shape="poly" id="edge12_Node000009_Node000007" title=" " alt="" coords="531,54,440,33,441,28,533,49"/>
+<area shape="poly" id="edge13_Node000009_Node000008" title=" " alt="" coords="520,70,464,70,464,65,520,65"/>
+<area shape="poly" id="edge15_Node000010_Node000003" title=" " alt="" coords="531,202,440,181,441,176,533,197"/>
+<area shape="poly" id="edge17_Node000011_Node000003" title=" " alt="" coords="545,250,524,242,458,210,405,181,407,176,461,206,526,237,547,245"/>
+<area shape="rect" id="Node000014" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="355,351,410,376"/>
+<area shape="poly" id="edge20_Node000013_Node000014" title=" " alt="" coords="512,366,410,366,410,361,512,361"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="przetworzDane.h" name="przetworzDane.h">
+<area shape="rect" id="Node000001" title="Deklaracje struktur i funkcji do przetwarzania danych." alt="" coords="158,5,290,31"/>
+<area shape="rect" id="Node000002" href="$adc_8h.html" title="Deklaracje funkcji i struktur związanych z obsługą ADC." alt="" coords="71,152,129,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,40,162,58,138,80,116,118,105,153,100,151,112,116,134,77,159,53,186,35"/>
+<area shape="rect" id="Node000006" href="$komunikacjaUART_8h.html" title="Deklaracje funkcji i struktur do obsługi komunikacji UART." alt="" coords="149,79,299,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="227,44,227,79,221,79,221,44"/>
+<area shape="rect" id="Node000009" href="$przetworzDane_8c.html" title="Implementacja funkcji do przetwarzania danych." alt="" coords="324,79,455,104"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="264,34,363,76,361,81,262,38"/>
+<area shape="rect" id="Node000003" href="$adc_8c.html" title="Implementacja funkcji i callbacków związanych z obsługą ADC." alt="" coords="5,225,61,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,190,46,227,42,223,78,186"/>
+<area shape="rect" id="Node000004" href="$przerwaniaTimerow_8h.html" title="Deklaracje funkcji obsługujących przerwania timerów." alt="" coords="85,225,248,251"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="122,186,158,223,154,227,119,190"/>
+<area shape="rect" id="Node000005" href="$przerwaniaTimerow_8c.html" title="Implementacja funkcji obsługujących przerwania timerów." alt="" coords="86,299,247,324"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="169,264,169,299,164,299,164,264"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="194,113,122,154,119,149,191,108"/>
+<area shape="rect" id="Node000007" href="$komunikacjaUART_8c.html" title="Implementacja funkcji i callbacków do obsługi komunikacji UART." alt="" coords="153,152,303,177"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="228,118,230,152,225,152,223,118"/>
+<area shape="rect" id="Node000008" href="$main_8c.html" title=": Main program body" alt="" coords="327,152,393,177"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="259,108,339,149,337,154,256,113"/>
+</map>

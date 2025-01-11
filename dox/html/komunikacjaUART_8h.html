@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Stanowisko badania czujnikow sily nacisku typu FSR: Dokumentacja pliku komunikacjaUART.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Stanowisko badania czujnikow sily nacisku typu FSR<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('komunikacjaUART_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Struktury danych</a> &#124;
+<a href="#func-members">Funkcje</a> &#124;
+<a href="#var-members">Zmienne</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku komunikacjaUART.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Deklaracje funkcji i struktur do obsługi komunikacji UART.  
+<a href="#details">Więcej...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="crc_8h_source.html">crc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="przetworzDane_8h_source.html">przetworzDane.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Wykres zależności załączania dla komunikacjaUART.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="komunikacjaUART_8h__incl.png" border="0" usemap="#akomunikacjaUART_8h" alt=""/></div>
+<map name="akomunikacjaUART_8h" id="akomunikacjaUART_8h">
+<area shape="rect" title="Deklaracje funkcji i struktur do obsługi komunikacji UART." alt="" coords="230,5,381,31"/>
+<area shape="rect" href="main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="272,152,339,177"/>
+<area shape="poly" title=" " alt="" coords="296,32,274,64,268,84,269,103,277,122,289,140,284,142,273,125,264,105,263,83,270,62,292,29"/>
+<area shape="rect" href="crc_8h.html" title="Deklaracje funkcji do obliczania i parsowania CRC." alt="" coords="279,79,332,104"/>
+<area shape="poly" title=" " alt="" coords="308,31,308,65,303,65,303,31"/>
+<area shape="rect" href="przetworzDane_8h.html" title="Deklaracje struktur i funkcji do przetwarzania danych." alt="" coords="357,79,489,104"/>
+<area shape="poly" title=" " alt="" coords="326,28,393,69,390,74,323,33"/>
+<area shape="rect" title=" " alt="" coords="5,299,136,324"/>
+<area shape="poly" title=" " alt="" coords="272,171,213,177,143,188,80,205,57,215,42,227,36,241,38,256,54,286,49,289,33,257,31,240,38,224,54,211,78,200,142,183,212,172,271,166"/>
+<area shape="rect" href="globalneZmienne_8h.html" title="Deklaracje uchwytów dla komponentów systemowych STM32." alt="" coords="53,225,201,251"/>
+<area shape="poly" title=" " alt="" coords="278,180,169,223,167,218,276,175"/>
+<area shape="rect" title=" " alt="" coords="225,225,292,251"/>
+<area shape="poly" title=" " alt="" coords="300,179,276,215,272,212,295,176"/>
+<area shape="rect" title=" " alt="" coords="317,225,387,251"/>
+<area shape="poly" title=" " alt="" coords="315,176,339,212,335,215,311,179"/>
+<area shape="rect" href="define_8h.html" title="Definicje stałych używanych w projekcie." alt="" coords="412,225,487,251"/>
+<area shape="poly" title=" " alt="" coords="330,175,415,217,412,221,327,180"/>
+<area shape="rect" title=" " alt="" coords="511,225,582,251"/>
+<area shape="poly" title=" " alt="" coords="340,173,499,220,497,225,338,178"/>
+<area shape="poly" title=" " alt="" coords="120,253,90,289,86,286,115,249"/>
+<area shape="poly" title=" " alt="" coords="308,104,308,138,303,138,303,104"/>
+<area shape="poly" title=" " alt="" coords="405,106,338,147,335,142,402,102"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div class="dyncontent">
+<div class="center"><img src="komunikacjaUART_8h__dep__incl.png" border="0" usemap="#akomunikacjaUART_8hdep" alt=""/></div>
+<map name="akomunikacjaUART_8hdep" id="akomunikacjaUART_8hdep">
+<area shape="rect" title="Deklaracje funkcji i struktur do obsługi komunikacji UART." alt="" coords="153,5,303,31"/>
+<area shape="rect" href="adc_8h.html" title="Deklaracje funkcji i struktur związanych z obsługą ADC." alt="" coords="71,79,129,104"/>
+<area shape="poly" title=" " alt="" coords="197,40,122,81,120,76,194,35"/>
+<area shape="rect" href="komunikacjaUART_8c.html" title="Implementacja funkcji i callbacków do obsługi komunikacji UART." alt="" coords="153,79,303,104"/>
+<area shape="poly" title=" " alt="" coords="231,44,231,79,225,79,225,44"/>
+<area shape="rect" href="main_8c.html" title=": Main program body" alt="" coords="327,79,393,104"/>
+<area shape="poly" title=" " alt="" coords="262,35,340,76,337,81,260,39"/>
+<area shape="rect" href="adc_8c.html" title="Implementacja funkcji i callbacków związanych z obsługą ADC." alt="" coords="5,152,61,177"/>
+<area shape="poly" title=" " alt="" coords="81,116,46,154,42,150,78,113"/>
+<area shape="rect" href="przerwaniaTimerow_8h.html" title="Deklaracje funkcji obsługujących przerwania timerów." alt="" coords="85,152,248,177"/>
+<area shape="poly" title=" " alt="" coords="122,113,158,150,154,154,119,116"/>
+<area shape="rect" href="przerwaniaTimerow_8c.html" title="Implementacja funkcji obsługujących przerwania timerów." alt="" coords="86,225,247,251"/>
+<area shape="poly" title=" " alt="" coords="169,191,169,225,164,225,164,191"/>
+</map>
+</div>
+</div>
+<p><a href="komunikacjaUART_8h_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Struktury danych</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structOdbiorUART.html">OdbiorUART</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struktura przechowująca dane dla odbioru UART.  <a href="structOdbiorUART.html#details">Więcej...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:ad92317f28b6d12e1e5317d5f6a860b88" id="r_ad92317f28b6d12e1e5317d5f6a860b88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="komunikacjaUART_8h.html#ad92317f28b6d12e1e5317d5f6a860b88">receive_data_frame</a> (uint16_t length)</td></tr>
+<tr class="memdesc:ad92317f28b6d12e1e5317d5f6a860b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja przetwarzająca odebraną ramkę danych.  <br /></td></tr>
+<tr class="separator:ad92317f28b6d12e1e5317d5f6a860b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd23f4f3b7f09675f4fe6faa95c8d317" id="r_afd23f4f3b7f09675f4fe6faa95c8d317"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="komunikacjaUART_8h.html#afd23f4f3b7f09675f4fe6faa95c8d317">sendDataRamkaDynamT</a> (uint32_t *tablicaPomiarowDynamicznych, int czasPomiaruDynam)</td></tr>
+<tr class="memdesc:afd23f4f3b7f09675f4fe6faa95c8d317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wysyłająca ramkę danych dynamicznych dla pomiaru z ustalonym czasem.  <br /></td></tr>
+<tr class="separator:afd23f4f3b7f09675f4fe6faa95c8d317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae494a9643f29b87d6d81e5264e60e57b" id="r_ae494a9643f29b87d6d81e5264e60e57b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="komunikacjaUART_8h.html#ae494a9643f29b87d6d81e5264e60e57b">HAL_UART_RxCpltCallback</a> (UART_HandleTypeDef *huart)</td></tr>
+<tr class="memdesc:ae494a9643f29b87d6d81e5264e60e57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback wywoływany po zakończeniu odbioru danych UART.  <br /></td></tr>
+<tr class="separator:ae494a9643f29b87d6d81e5264e60e57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Zmienne</h2></td></tr>
+<tr class="memitem:ab68f3dec5fbab1c30a2960d28c742fff" id="r_ab68f3dec5fbab1c30a2960d28c742fff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structOdbiorUART.html">OdbiorUART</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="komunikacjaUART_8h.html#ab68f3dec5fbab1c30a2960d28c742fff">odbiorUART</a></td></tr>
+<tr class="memdesc:ab68f3dec5fbab1c30a2960d28c742fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna globalna przechowująca dane odbioru UART.  <br /></td></tr>
+<tr class="separator:ab68f3dec5fbab1c30a2960d28c742fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Plik zawiera definicje i deklaracje funkcji, zmiennych i struktur potrzebnych do obsługi komunikacji UART. </p>
+
+<p class="definition">Definicja w pliku <a class="el" href="komunikacjaUART_8h_source.html">komunikacjaUART.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="ae494a9643f29b87d6d81e5264e60e57b" name="ae494a9643f29b87d6d81e5264e60e57b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae494a9643f29b87d6d81e5264e60e57b">&#9670;&#160;</a></span>HAL_UART_RxCpltCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_UART_RxCpltCallback </td>
+          <td>(</td>
+          <td class="paramtype">UART_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>huart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funkcja obsługuje odbiór pojedynczych bajtów, budując pełną ramkę danych i przekazując ją do przetwarzania.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">huart</td><td>- wskaźnik na uchwyt UART </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="komunikacjaUART_8c_source.html#l00124">124</a> pliku <a class="el" href="komunikacjaUART_8c_source.html">komunikacjaUART.c</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="komunikacjaUART_8h_ae494a9643f29b87d6d81e5264e60e57b_cgraph.png" border="0" usemap="#akomunikacjaUART_8h_ae494a9643f29b87d6d81e5264e60e57b_cgraph" alt=""/></div>
+<map name="akomunikacjaUART_8h_ae494a9643f29b87d6d81e5264e60e57b_cgraph" id="akomunikacjaUART_8h_ae494a9643f29b87d6d81e5264e60e57b_cgraph">
+<area shape="rect" title="Callback wywoływany po zakończeniu odbioru danych UART." alt="" coords="5,55,201,80"/>
+<area shape="rect" href="komunikacjaUART_8c.html#ad92317f28b6d12e1e5317d5f6a860b88" title="Funkcja przetwarzająca odebraną ramkę danych." alt="" coords="249,55,401,80"/>
+<area shape="poly" title=" " alt="" coords="202,65,235,65,235,70,202,70"/>
+<area shape="rect" href="crc_8c.html#a8fca00596c1e6a7e22df92fc52d620ec" title="Oblicza wartość CRC16 zgodnie ze standardem CCITT FALSE." alt="" coords="469,5,600,31"/>
+<area shape="poly" title=" " alt="" coords="379,52,466,31,468,36,381,57"/>
+<area shape="rect" href="crc_8c.html#aebcf12be90261bb2138b44732c0fd50b" title="Parsuje wartość CRC z tekstu." alt="" coords="457,55,612,80"/>
+<area shape="poly" title=" " alt="" coords="402,65,443,65,443,70,402,70"/>
+<area shape="rect" href="przetworzDane_8c.html#a79ed7137d1c9cf2f34e805f29cc93b03" title="Przetwarza odebrane dane." alt="" coords="449,104,620,129"/>
+<area shape="poly" title=" " alt="" coords="381,77,468,98,466,103,379,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad92317f28b6d12e1e5317d5f6a860b88" name="ad92317f28b6d12e1e5317d5f6a860b88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad92317f28b6d12e1e5317d5f6a860b88">&#9670;&#160;</a></span>receive_data_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void receive_data_frame </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>length</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funkcja analizuje odebraną ramkę, sprawdzając jej poprawność, a następnie przekazuje dane do dalszego przetwarzania.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>- długość odebranej ramki </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="komunikacjaUART_8c_source.html#l00028">28</a> pliku <a class="el" href="komunikacjaUART_8c_source.html">komunikacjaUART.c</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="komunikacjaUART_8h_ad92317f28b6d12e1e5317d5f6a860b88_cgraph.png" border="0" usemap="#akomunikacjaUART_8h_ad92317f28b6d12e1e5317d5f6a860b88_cgraph" alt=""/></div>
+<map name="akomunikacjaUART_8h_ad92317f28b6d12e1e5317d5f6a860b88_cgraph" id="akomunikacjaUART_8h_ad92317f28b6d12e1e5317d5f6a860b88_cgraph">
+<area shape="rect" title="Funkcja przetwarzająca odebraną ramkę danych." alt="" coords="5,55,157,80"/>
+<area shape="rect" href="crc_8c.html#a8fca00596c1e6a7e22df92fc52d620ec" title="Oblicza wartość CRC16 zgodnie ze standardem CCITT FALSE." alt="" coords="225,5,356,31"/>
+<area shape="poly" title=" " alt="" coords="135,52,222,31,224,36,137,57"/>
+<area shape="rect" href="crc_8c.html#aebcf12be90261bb2138b44732c0fd50b" title="Parsuje wartość CRC z tekstu." alt="" coords="213,55,368,80"/>
+<area shape="poly" title=" " alt="" coords="158,65,199,65,199,70,158,70"/>
+<area shape="rect" href="przetworzDane_8c.html#a79ed7137d1c9cf2f34e805f29cc93b03" title="Przetwarza odebrane dane." alt="" coords="205,104,376,129"/>
+<area shape="poly" title=" " alt="" coords="137,77,224,98,222,103,135,83"/>
+</map>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="komunikacjaUART_8h_ad92317f28b6d12e1e5317d5f6a860b88_icgraph.png" border="0" usemap="#akomunikacjaUART_8h_ad92317f28b6d12e1e5317d5f6a860b88_icgraph" alt=""/></div>
+<map name="akomunikacjaUART_8h_ad92317f28b6d12e1e5317d5f6a860b88_icgraph" id="akomunikacjaUART_8h_ad92317f28b6d12e1e5317d5f6a860b88_icgraph">
+<area shape="rect" title="Funkcja przetwarzająca odebraną ramkę danych." alt="" coords="249,5,401,31"/>
+<area shape="rect" href="komunikacjaUART_8c.html#ae494a9643f29b87d6d81e5264e60e57b" title="Callback wywoływany po zakończeniu odbioru danych UART." alt="" coords="5,5,201,31"/>
+<area shape="poly" title=" " alt="" coords="236,21,202,21,202,15,236,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afd23f4f3b7f09675f4fe6faa95c8d317" name="afd23f4f3b7f09675f4fe6faa95c8d317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd23f4f3b7f09675f4fe6faa95c8d317">&#9670;&#160;</a></span>sendDataRamkaDynamT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendDataRamkaDynamT </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>tablicaPomiarowDynamicznych</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>czasPomiaruDynam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funkcja tworzy ramkę danych dynamicznych dla pomiaru z ustalonym czasem i wysyła ją przez UART.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tablicaPomiarowDynamicznych</td><td>- tablica z danymi pomiarowymi </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">czasPomiaruDynam</td><td>- czas pomiaru danych dynamicznych </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="komunikacjaUART_8c_source.html#l00070">70</a> pliku <a class="el" href="komunikacjaUART_8c_source.html">komunikacjaUART.c</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="komunikacjaUART_8h_afd23f4f3b7f09675f4fe6faa95c8d317_cgraph.png" border="0" usemap="#akomunikacjaUART_8h_afd23f4f3b7f09675f4fe6faa95c8d317_cgraph" alt=""/></div>
+<map name="akomunikacjaUART_8h_afd23f4f3b7f09675f4fe6faa95c8d317_cgraph" id="akomunikacjaUART_8h_afd23f4f3b7f09675f4fe6faa95c8d317_cgraph">
+<area shape="rect" title="Funkcja wysyłająca ramkę danych dynamicznych dla pomiaru z ustalonym czasem." alt="" coords="5,5,189,31"/>
+<area shape="rect" href="crc_8c.html#a8fca00596c1e6a7e22df92fc52d620ec" title="Oblicza wartość CRC16 zgodnie ze standardem CCITT FALSE." alt="" coords="237,5,368,31"/>
+<area shape="poly" title=" " alt="" coords="190,15,224,15,224,21,190,21"/>
+</map>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="komunikacjaUART_8h_afd23f4f3b7f09675f4fe6faa95c8d317_icgraph.png" border="0" usemap="#akomunikacjaUART_8h_afd23f4f3b7f09675f4fe6faa95c8d317_icgraph" alt=""/></div>
+<map name="akomunikacjaUART_8h_afd23f4f3b7f09675f4fe6faa95c8d317_icgraph" id="akomunikacjaUART_8h_afd23f4f3b7f09675f4fe6faa95c8d317_icgraph">
+<area shape="rect" title="Funkcja wysyłająca ramkę danych dynamicznych dla pomiaru z ustalonym czasem." alt="" coords="259,5,443,31"/>
+<area shape="rect" href="adc_8c.html#af20a88180db1113be1e89266917d148b" title="Callback wywoływany po zakończeniu konwersji ADC." alt="" coords="5,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja zmiennych</h2>
+<a id="ab68f3dec5fbab1c30a2960d28c742fff" name="ab68f3dec5fbab1c30a2960d28c742fff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab68f3dec5fbab1c30a2960d28c742fff">&#9670;&#160;</a></span>odbiorUART</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structOdbiorUART.html">OdbiorUART</a> odbiorUART</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Zmienna globalna przechowująca dane odbioru UART.</p>
+<p>Zmienna globalna ,,odbiorUART'' przechowuje dane odbioru UART, w tym ostatni odebrany bajt oraz bufor dla odebranych ramek danych. Struktura jest inicjalizowana zerami. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="komunikacjaUART_8c_source.html#l00017">17</a> pliku <a class="el" href="komunikacjaUART_8c_source.html">komunikacjaUART.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><a class="el" href="komunikacjaUART_8h.html">komunikacjaUART.h</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>
